@@ -74,7 +74,7 @@
   </url>
   
   <url>
-    <loc>https://jerraon.top/box/nav/index.html</loc>
+    <loc>https://jerraon.top/life/games/index.html</loc>
     
     <lastmod>2023-02-28</lastmod>
     
@@ -92,25 +92,16 @@
   </url>
   
   <url>
+    <loc>https://jerraon.top/box/nav/index.html</loc>
+    
+    <lastmod>2023-02-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://jerraon.top/box/animation/index.html</loc>
-    
-    <lastmod>2023-02-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://jerraon.top/life/games/index.html</loc>
-    
-    <lastmod>2023-02-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://jerraon.top/personal/bb/index.html</loc>
     
     <lastmod>2023-02-28</lastmod>
     
@@ -137,7 +128,7 @@
   </url>
   
   <url>
-    <loc>https://jerraon.top/site/census/index.html</loc>
+    <loc>https://jerraon.top/personal/about/index.html</loc>
     
     <lastmod>2023-02-28</lastmod>
     
@@ -155,16 +146,7 @@
   </url>
   
   <url>
-    <loc>https://jerraon.top/personal/about/index.html</loc>
-    
-    <lastmod>2023-02-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://jerraon.top/site/time/index.html</loc>
+    <loc>https://jerraon.top/personal/bb/index.html</loc>
     
     <lastmod>2023-02-28</lastmod>
     
@@ -174,6 +156,24 @@
   
   <url>
     <loc>https://jerraon.top/social/link/index.html</loc>
+    
+    <lastmod>2023-02-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://jerraon.top/site/census/index.html</loc>
+    
+    <lastmod>2023-02-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://jerraon.top/site/time/index.html</loc>
     
     <lastmod>2023-02-28</lastmod>
     
@@ -209,6 +209,13 @@
 
   
   <url>
+    <loc>https://jerraon.top/categories/%E8%AF%97%E8%AF%8D%E6%AD%8C%E8%B5%8B/</loc>
+    <lastmod>2023-04-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://jerraon.top/categories/%E6%9D%82%E8%B0%88%E6%95%99%E7%A8%8B/</loc>
     <lastmod>2023-04-04</lastmod>
     <changefreq>weekly</changefreq>
@@ -217,13 +224,6 @@
   
   <url>
     <loc>https://jerraon.top/categories/%E4%B8%AA%E4%BA%BA%E6%97%A5%E8%AE%B0/</loc>
-    <lastmod>2023-04-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://jerraon.top/categories/%E8%AF%97%E8%AF%8D%E6%AD%8C%E8%B5%8B/</loc>
     <lastmod>2023-04-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
