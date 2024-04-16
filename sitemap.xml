@@ -74,15 +74,6 @@
   </url>
   
   <url>
-    <loc>https://www.skylerplus.top/social/link/index.html</loc>
-    
-    <lastmod>2024-04-15</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.skylerplus.top/social/fcircle/index.html</loc>
     
     <lastmod>2024-04-15</lastmod>
@@ -92,25 +83,7 @@
   </url>
   
   <url>
-    <loc>https://www.skylerplus.top/life/games/index.html</loc>
-    
-    <lastmod>2024-04-15</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.skylerplus.top/life/movies/index.html</loc>
-    
-    <lastmod>2024-04-15</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.skylerplus.top/life/music/index.html</loc>
+    <loc>https://www.skylerplus.top/social/link/index.html</loc>
     
     <lastmod>2024-04-15</lastmod>
     
@@ -138,6 +111,33 @@
   
   <url>
     <loc>https://www.skylerplus.top/personal/love/index.html</loc>
+    
+    <lastmod>2024-04-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.skylerplus.top/life/games/index.html</loc>
+    
+    <lastmod>2024-04-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.skylerplus.top/life/movies/index.html</loc>
+    
+    <lastmod>2024-04-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.skylerplus.top/life/music/index.html</loc>
     
     <lastmod>2024-04-15</lastmod>
     
@@ -209,13 +209,6 @@
 
   
   <url>
-    <loc>https://www.skylerplus.top/categories/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/</loc>
-    <lastmod>2024-04-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://www.skylerplus.top/categories/%E6%9D%82%E8%B0%88%E6%95%99%E7%A8%8B/</loc>
     <lastmod>2024-04-16</lastmod>
     <changefreq>weekly</changefreq>
@@ -224,6 +217,13 @@
   
   <url>
     <loc>https://www.skylerplus.top/categories/Python/</loc>
+    <lastmod>2024-04-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.skylerplus.top/categories/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/</loc>
     <lastmod>2024-04-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
