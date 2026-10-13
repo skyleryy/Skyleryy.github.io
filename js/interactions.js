@@ -44,10 +44,10 @@
     'copy-image':()=>copy(image),'open-image':()=>window.open(image,'_blank','noopener'),
     'save-image':()=>{const a=document.createElement('a');a.href=image;a.download=new URL(image,location.href).pathname.split('/').pop()||'image';a.click();},
     'copy-page':()=>copy(location.href),random:()=>{const posts=[...document.querySelectorAll('.recent-posts .article-title[href]')];if(posts.length)location.href=posts[Math.floor(Math.random()*posts.length)].href;else location.href='/archives/';},
-    theme:()=>switchNightMode(),appearance:()=>toggleWinbox(),reading:()=>document.getElementById('readmode')?.click(),
+    theme:event=>switchNightMode(event),appearance:()=>toggleWinbox(),reading:()=>document.getElementById('readmode')?.click(),
     fullscreen:()=>document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen(),print:()=>window.print(),native:()=>changeMouseMode()
   };
-  menu.addEventListener('click',async e=>{const action=e.target.closest('[data-rm-action]')?.dataset.rmAction;close();try{if(actions[action])await actions[action]();}catch(error){console.warn('菜单操作未完成',error.message);}});
+  menu.addEventListener('click',async e=>{const action=e.target.closest('[data-rm-action]')?.dataset.rmAction;close();try{if(actions[action])await actions[action](e);}catch(error){console.warn('菜单操作未完成',error.message);}});
   mask.addEventListener('click',close);
   document.addEventListener('keydown',e=>{
     if(menu.hidden)return;

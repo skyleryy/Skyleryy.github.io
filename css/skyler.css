@@ -11,8 +11,9 @@
 @font-face{font-family:LXGWScreen;src:url('/assets/fonts/wenkai-screen.woff2') format('woff2');font-display:swap}
 :root{--theme-color:#39c5bb;--global-font:LXGWScreen;--code-font:ui-monospace;--skyler-font-size:15.5px;--default-bg:url('/assets/skyler/daily.webp');--darkmode-bg:url('/assets/skyler/daily.webp');--mobileday-bg:url('/assets/skyler/daily.webp');--mobilenight-bg:url('/assets/skyler/daily.webp');--trans-light:rgba(250,250,250,.96);--trans-dark:rgba(28,28,28,.96);--bg-filter:none;--layout-justify-content:unset;--aside-content-display:block;--first-child-order:0;--recent-post-item-margin:0px 1% 20px 0px;--nav-visible-display:none;--nav-fixed-display:inline-flex;--menu-shadow:0 0 1px var(--theme-color);--rightside-display:block}
 body{font-family:var(--global-font),-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;font-size:var(--skyler-font-size)}
-#web_bg{background:var(--default-bg)!important;background-size:cover!important;background-position:center!important;background-attachment:fixed!important;filter:none!important;animation:none!important}
-[data-theme=dark] #web_bg{background:var(--darkmode-bg)!important}
+#web_bg{background-image:var(--default-bg)!important;background-size:cover!important;background-position:center!important;background-repeat:no-repeat!important;background-attachment:fixed!important;filter:none!important;animation:none!important}
+/* Only swap the image: the background shorthand resets size/position in dark mode. */
+[data-theme=dark] #web_bg{background-image:var(--darkmode-bg)!important}
 #page-header.full_page{height:100svh;background:none!important}#page-header.full_page:before{background:rgba(0,0,0,.16)!important;z-index:0!important}
 #page-header #site-info{z-index:1}#site-title{font-family:var(--global-font)!important;font-weight:600!important}#site-subtitle{font-family:var(--global-font);font-size:24px;text-shadow:0 2px 5px #0005}
 #page-header.not-top-img #nav{background:linear-gradient(110deg,#efd4e2ee,#c8eef9ee);color:#252d37}

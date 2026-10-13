@@ -1,8 +1,10 @@
 'use strict';
 
 window.scrollToTop = () => window.scrollTo({ top: 0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
-window.switchNightMode = () => {
+window.switchNightMode = event => {
   const dark = document.documentElement.dataset.theme !== 'dark';
+  window.skylerThemeTransition?.(dark, event);
+  document.body.classList.toggle('DarkMode', dark);
   (dark ? window.activateDarkMode : window.activateLightMode)();
   try { saveToLocal.set('theme', dark ? 'dark' : 'light', 365); } catch (_) {}
   document.getElementById('nightmode-button')?.setAttribute('aria-pressed', String(dark));

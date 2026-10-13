@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://skyleryy.github.io/site/echarts/index.html</loc>
+    <loc>https://skyleryy.github.io/site/census/index.html</loc>
     
     <lastmod>2026-10-13</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>https://skyleryy.github.io/site/census/index.html</loc>
+    <loc>https://skyleryy.github.io/site/echarts/index.html</loc>
     
     <lastmod>2026-10-13</lastmod>
     
@@ -236,13 +236,6 @@
 
   
   <url>
-    <loc>https://skyleryy.github.io/categories/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2026-10-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://skyleryy.github.io/categories/Python/</loc>
     <lastmod>2026-10-13</lastmod>
     <changefreq>weekly</changefreq>
@@ -251,6 +244,13 @@
   
   <url>
     <loc>https://skyleryy.github.io/categories/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://skyleryy.github.io/categories/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2026-10-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

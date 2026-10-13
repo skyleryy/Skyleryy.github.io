@@ -50,8 +50,8 @@
     // 留 null = 用访客 IP 定位（fomal.js 已经请求了腾讯的位置接口），拿不到就按
     // fallbackLat + 访客时区推出的经度估算，够显示用。
     sun: { latLng: null, fallbackLat: 22.5319 },
-    // 访客自己没选过深浅色时，按当天真实日出日落决定日间 / 夜间（详见 applyDayNight）
-    dayNight: { enable: true, themeKey: 'theme' },
+    // 默认使用站点的白天模式；日历只显示日出日落，不自动改变主题。
+    dayNight: { enable: false, themeKey: 'theme' },
     tickMs: 60000                   // 自动重算间隔，0 = 关掉
   };
 
