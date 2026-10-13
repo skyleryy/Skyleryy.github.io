@@ -1,0 +1,14 @@
+/* The 16px cursor follows the v1.0.3 theme, including its hover and click states. */
+#cursor{position:fixed;left:0;top:0;width:16px;height:16px;border-radius:50%;background:var(--theme-color,#39c5bb)!important;opacity:.25;pointer-events:none;transition:background .2s,opacity .2s,transform .2s}
+#cursor.hidden{opacity:0}#cursor.hover{opacity:.1;transform:scale(2.5)}#cursor.active{opacity:.5;transform:scale(.5)}
+#rightMenu[hidden],#rightMenu [hidden],.rmMask[hidden]{display:none!important}
+#rightMenu{z-index:19198;width:170px;max-height:calc(100svh - 16px);overflow:auto;box-shadow:0 8px 32px #0002}
+.rmMask{position:fixed;inset:0;z-index:19197;background:transparent}
+#rightMenu button.rightMenu-item{font:inherit;color:inherit;text-align:left;background:transparent;border:0;padding:0}
+#rightMenu .rightMenu-line>.rightMenu-item{width:100%}#rightMenu .rightMenu-small>button{width:33px;padding:0;display:flex;justify-content:center;align-items:center}
+#rightMenu .rightMenu-item:focus-visible{outline:2px solid var(--theme-color);outline-offset:-2px;background:color-mix(in srgb,var(--theme-color) 12%,transparent)}
+#myscoll{position:fixed;right:55.6px;top:0;width:6px;background:rgb(0 0 0 / .5);border-radius:2em;z-index:9999}
+.neko{position:fixed!important;z-index:10000;background-image:url('/assets/skyler/hanging-character.webp')!important;border-radius:8px;pointer-events:none}
+.neko[hidden]{display:none!important}.neko::after{width:110px;height:auto;line-height:1.7;top:-28px;right:-20px;padding:5px 9px;background:#fff;border-radius:9px;box-shadow:0 2px 10px #0002;white-space:nowrap;font-size:12px}
+@media(max-width:992px),(pointer:coarse){.neko,#myscoll{display:none!important}}
+@media(max-width:500px),(pointer:coarse){#cursor-position{display:none!important}}

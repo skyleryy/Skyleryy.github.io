@@ -206,12 +206,6 @@ template {
 }
 .fontawesomeIcon,
 hr:before,
-#article-container h1:before,
-#article-container h2:before,
-#article-container h3:before,
-#article-container h4:before,
-#article-container h5:before,
-#article-container h6:before,
 #post .post-outdate-notice:before,
 .note:not(.no-icon)::before {
   display: inline-block;
@@ -325,79 +319,6 @@ hr:before,
   -o-transition: all 0.3s ease-out;
   -ms-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
-}
-#content-inner,
-#footer {
-  -webkit-animation: bottom-top 1s;
-  -moz-animation: bottom-top 1s;
-  -o-animation: bottom-top 1s;
-  -ms-animation: bottom-top 1s;
-  animation: bottom-top 1s;
-}
-#page-header {
-  -webkit-animation: header-effect 1s;
-  -moz-animation: header-effect 1s;
-  -o-animation: header-effect 1s;
-  -ms-animation: header-effect 1s;
-  animation: header-effect 1s;
-}
-#site-title,
-#site-subtitle {
-  -webkit-animation: titleScale 1s;
-  -moz-animation: titleScale 1s;
-  -o-animation: titleScale 1s;
-  -ms-animation: titleScale 1s;
-  animation: titleScale 1s;
-}
-#nav.show {
-  -webkit-animation: headerNoOpacity 1s;
-  -moz-animation: headerNoOpacity 1s;
-  -o-animation: headerNoOpacity 1s;
-  -ms-animation: headerNoOpacity 1s;
-  animation: headerNoOpacity 1s;
-}
-canvas:not(#ribbon-canvas),
-#web_bg {
-  -webkit-animation: to_show 4s;
-  -moz-animation: to_show 4s;
-  -o-animation: to_show 4s;
-  -ms-animation: to_show 4s;
-  animation: to_show 4s;
-}
-#ribbon-canvas {
-  -webkit-animation: ribbon_to_show 4s;
-  -moz-animation: ribbon_to_show 4s;
-  -o-animation: ribbon_to_show 4s;
-  -ms-animation: ribbon_to_show 4s;
-  animation: ribbon_to_show 4s;
-}
-#sidebar-menus.open > :nth-child(1) {
-  -webkit-animation: sidebarItem 0.2s;
-  -moz-animation: sidebarItem 0.2s;
-  -o-animation: sidebarItem 0.2s;
-  -ms-animation: sidebarItem 0.2s;
-  animation: sidebarItem 0.2s;
-}
-#sidebar-menus.open > :nth-child(2) {
-  -webkit-animation: sidebarItem 0.4s;
-  -moz-animation: sidebarItem 0.4s;
-  -o-animation: sidebarItem 0.4s;
-  -ms-animation: sidebarItem 0.4s;
-  animation: sidebarItem 0.4s;
-}
-#sidebar-menus.open > :nth-child(3) {
-  -webkit-animation: sidebarItem 0.6s;
-  -moz-animation: sidebarItem 0.6s;
-  -o-animation: sidebarItem 0.6s;
-  -ms-animation: sidebarItem 0.6s;
-  animation: sidebarItem 0.6s;
-}
-#sidebar-menus.open > :nth-child(4) {
-  -webkit-animation: sidebarItem 0.8s;
-  -moz-animation: sidebarItem 0.8s;
-  -o-animation: sidebarItem 0.8s;
-  -ms-animation: sidebarItem 0.8s;
-  animation: sidebarItem 0.8s;
 }
 .scroll-down-effects {
   -webkit-animation: scroll-down-effect 1.5s infinite;
@@ -1328,12 +1249,12 @@ canvas:not(#ribbon-canvas),
 :root {
   --global-font-size: 15.5px;
   --global-bg: #fff;
-  --font-color: #4c4948;
+  --font-color: #1f1f1f;
   --hr-border: #d2ebfd;
   --hr-before-color: #bfe4fb;
   --search-bg: #f6f8fa;
-  --search-input-color: #4c4948;
-  --search-result-title: #4c4948;
+  --search-input-color: #1f1f1f;
+  --search-result-title: #1f1f1f;
   --preloader-bg: #37474f;
   --preloader-color: #fff;
   --tab-border-color: #f0f0f0;
@@ -1367,7 +1288,7 @@ body {
   background: var(--global-bg);
   color: var(--font-color);
   font-size: var(--global-font-size);
-  font-family: var(--global-font), -apple-system, 'Quicksand', 'Nimbus Roman No9 L', 'PingFang SC', 'Hiragino Sans GB', 'Noto Serif SC', 'Microsoft Yahei', 'WenQuanYi Micro Hei', 'ST Heiti', sans-serif;;
+  font-family: var(--global-font), -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
   line-height: 2;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
@@ -1393,7 +1314,7 @@ input::placeholder {
   z-index: -999;
   width: 100%;
   height: 100%;
-  background: url(https://picbed.skylerplus.top/bg/daily.jpg);
+  background: var(--default-bg);
   background-attachment: local;
   background-position: center;
   background-size: cover;
@@ -1497,7 +1418,7 @@ a:hover {
 #site-name,
 #aside-content .author-info__name,
 #aside-content .author-info__description {
-  font-family: var(--global-font);
+  font-family: var(--global-font), -apple-system, "Segoe UI", "PingFang SC", sans-serif;
 }
 .is-center {
   text-align: center;
@@ -1519,12 +1440,6 @@ img:not([src]) {
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   filter: alpha(opacity=0);
-}
-img[data-lazy-src]:not(.loaded) {
-  filter: blur(8px) brightness(1);
-}
-img[data-lazy-src].error {
-  filter: none;
 }
 .img-alt {
   margin: -10px 0 10px;
@@ -1670,8 +1585,8 @@ figure.highlight pre .javascript .function {
 }
 #article-container pre,
 #article-container code {
-  font-size: 14.5px;
-  font-family: Consolas_1, var(--global-font), "Microsoft YaHei", Menlo, "PingFang SC", "Microsoft JhengHei", sans-serif !important;
+  font-size: 14.7px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace !important;
 }
 #article-container code {
   padding: 2px 4px;
@@ -1698,7 +1613,7 @@ figure.highlight pre .javascript .function {
 #article-container figure.highlight figcaption,
 #article-container figure.highlight .caption {
   padding: 6px 0 2px 14px;
-  font-size: 14.5px;
+  font-size: 14.7px;
   line-height: 1em;
 }
 #article-container figure.highlight figcaption a,
@@ -1730,7 +1645,7 @@ figure.highlight pre .javascript .function {
   height: 2.15em;
   background: var(--hltools-bg);
   color: var(--hltools-color);
-  font-size: 14.5px;
+  font-size: 14.7px;
 }
 #article-container .highlight-tools.closed ~ * {
   display: none;
@@ -1855,7 +1770,7 @@ figure.highlight pre .javascript .function {
   width: 100%;
   background: var(--hlexpand-bg);
   text-align: center;
-  font-size: 14.5px;
+  font-size: 14.7px;
 }
 #article-container .code-expand-btn i {
   padding: 6px 0;
@@ -2016,7 +1931,7 @@ figure.highlight pre .javascript .function {
   height: 100%;
   vertical-align: top;
   text-align: center;
-  font-family: var(--global-font);
+  font-family: var(--global-font), -apple-system, "Segoe UI", "PingFang SC", sans-serif;
 }
 @media screen and (max-width: 768px) {
   .error404 #error-wrap .error-content .error-info {
@@ -2869,6 +2784,11 @@ h1.page-title + .tag-cloud-list {
   margin-top: 20px;
   padding: 20px 24px;
 }
+@media screen and (max-width: 768px) {
+  #aside-content .card-widget:not(#card-toc) {
+    display: none;
+  }
+}
 #aside-content .card-info .author-info__name {
   font-weight: 500;
   font-size: 1.57em;
@@ -3231,11 +3151,11 @@ h1.page-title + .tag-cloud-list {
 .avatar-img img {
   width: 100%;
   height: 100%;
-  -webkit-transition: filter 1000ms cubic-bezier(0.38, 0.21, 0.94, 0.1) 0.2s, -webkit-transform 1s;
-  -moz-transition: filter 1000ms cubic-bezier(0.38, 0.21, 0.94, 0.1) 0.2s, -moz-transform 1s;
-  -o-transition: filter 1000ms cubic-bezier(0.38, 0.21, 0.94, 0.1) 0.2s, -o-transform 1s;
-  -ms-transition: filter 1000ms cubic-bezier(0.38, 0.21, 0.94, 0.1) 0.2s, -ms-transform 1s;
-  transition: filter 1000ms cubic-bezier(0.38, 0.21, 0.94, 0.1) 0.2s, transform 1s;
+  -webkit-transition: filter 500ms cubic-bezier(0.38, 0.21, 0.94, 0.1) 0.2s, -webkit-transform 0.5s;
+  -moz-transition: filter 500ms cubic-bezier(0.38, 0.21, 0.94, 0.1) 0.2s, -moz-transform 0.5s;
+  -o-transition: filter 500ms cubic-bezier(0.38, 0.21, 0.94, 0.1) 0.2s, -o-transform 0.5s;
+  -ms-transition: filter 500ms cubic-bezier(0.38, 0.21, 0.94, 0.1) 0.2s, -ms-transform 0.5s;
+  transition: filter 500ms cubic-bezier(0.38, 0.21, 0.94, 0.1) 0.2s, transform 0.5s;
   object-fit: cover;
 }
 .avatar-img img:hover {
@@ -3493,124 +3413,6 @@ h1.page-title + .tag-cloud-list {
     transform: scale(0.7);
   }
 }
-:root {
-  --card-friend-class-desc-bgcolor: #e7e7e7;
-  --card-friend-name-color: #000;
-  --card-friend-item-hover: var(--text-bg-hover);
-  --card-friend-descr-color: #797979;
-}
-[data-theme="dark"] {
-  --card-friend-class-desc-bgcolor: #111;
-  --card-friend-name-color: #fff;
-  --card-friend-item-hover: var(--text-bg-hover);
-  --card-friend-descr-color: #797979;
-}
-#aside-content .card-widget.card-friend-link {
-  padding: 20px;
-}
-.card-widget.card-friend-link .card-friend-link-container {
-  max-height: 460px;
-  overflow: scroll;
-}
-.card-widget.card-friend-link .card-friend-link-container::-webkit-scrollbar {
-  display: none;
-}
-.card-widget.card-friend-link summary.card-friend-class-desc {
-  padding: 0px 15px;
-}
-.card-widget.card-friend-link details.card-friend-class-name[open] summary.card-friend-class-desc {
-  position: sticky;
-  top: 0px;
-  background: var(--card-friend-class-desc-bgcolor);
-  z-index: 1;
-}
-.card-widget.card-friend-link a.card-friend-item {
-  padding: 0px 15px;
-  height: 60px;
-  width: auto;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: box;
-  display: flex;
-  -webkit-box-align: center;
-  -moz-box-align: center;
-  -o-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  align-items: center;
-  -webkit-box-lines: single;
-  -moz-box-lines: single;
-  -o-box-lines: single;
-  -webkit-flex-wrap: nowrap;
-  -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap;
-}
-.card-widget.card-friend-link a.card-friend-item:hover {
-  background-color: var(--card-friend-item-hover);
-  border-radius: 12px;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-}
-.card-widget.card-friend-link img.card-friend-avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  margin: 10px 10px;
-}
-.card-widget.card-friend-link .offline-friend-link img.card-friend-avatar {
-  filter: grayscale(100%);
-}
-.card-widget.card-friend-link .card-friend-details {
-  width: auto;
-  height: 60px;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: box;
-  display: flex;
-  -webkit-box-lines: single;
-  -moz-box-lines: single;
-  -o-box-lines: single;
-  -webkit-flex-wrap: nowrap;
-  -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap;
-  -webkit-box-orient: vertical;
-  -moz-box-orient: vertical;
-  -o-box-orient: vertical;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -moz-box-pack: center;
-  -o-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-box-align: start;
-  -moz-box-align: start;
-  -o-box-align: start;
-  -ms-flex-align: start;
-  -webkit-align-items: flex-start;
-  align-items: flex-start;
-}
-.card-widget.card-friend-link .card-friend-name {
-  color: var(--card-friend-name-color);
-}
-.card-widget.card-friend-link .card-friend-descr {
-  font-size: 12px;
-  white-space: nowrap;
-  overflow: hidden;
-  -o-text-overflow: ellipsis;
-  text-overflow: ellipsis;
-  width: 12em;
-  color: var(--card-friend-descr-color);
-}
 #post-comment .comment-head {
   margin-bottom: 20px;
 }
@@ -3850,7 +3652,6 @@ h1.page-title + .tag-cloud-list {
   background: 0;
 }
 #page-header.not-top-img #nav {
-  background: rgba(255,255,255,0.8);
   -webkit-box-shadow: 0 5px 6px -5px rgba(133,133,133,0.6);
   box-shadow: 0 5px 6px -5px rgba(133,133,133,0.6);
 }
@@ -3862,7 +3663,6 @@ h1.page-title + .tag-cloud-list {
   position: fixed;
   top: -60px;
   z-index: 91;
-  background: rgba(255,255,255,0.8);
   -webkit-box-shadow: 0 5px 6px -5px rgba(133,133,133,0.6);
   box-shadow: 0 5px 6px -5px rgba(133,133,133,0.6);
   -webkit-transition: -webkit-transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
@@ -3974,9 +3774,6 @@ h1.page-title + .tag-cloud-list {
 #post-info #post-meta a:hover {
   color: #49b1f5;
   text-decoration: underline;
-}
-#post-info #post-meta time {
-  display: none;
 }
 #nav {
   position: absolute;
@@ -4154,123 +3951,6 @@ h1.page-title + .tag-cloud-list {
 #nav .site-page:not(.child):hover:after {
   width: 100%;
 }
-.loading-bg {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: box;
-  display: flex;
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  background: var(--loading-color);
-  z-index: 1001;
-  opacity: 1;
-  -ms-filter: none;
-  filter: none;
-  -webkit-transition: 0.3s;
-  -moz-transition: 0.3s;
-  -o-transition: 0.3s;
-  -ms-transition: 0.3s;
-  transition: 0.3s;
-}
-#loading-box .loading-img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  margin: auto;
-  border: 4px solid #f0f0f2;
-  -webkit-animation-duration: 0.3s;
-  -moz-animation-duration: 0.3s;
-  -o-animation-duration: 0.3s;
-  -ms-animation-duration: 0.3s;
-  animation-duration: 0.3s;
-  -webkit-animation-name: loadingAction;
-  -moz-animation-name: loadingAction;
-  -o-animation-name: loadingAction;
-  -ms-animation-name: loadingAction;
-  animation-name: loadingAction;
-  -webkit-animation-iteration-count: infinite;
-  -moz-animation-iteration-count: infinite;
-  -o-animation-iteration-count: infinite;
-  -ms-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-  -webkit-animation-direction: alternate;
-  -moz-animation-direction: alternate;
-  -o-animation-direction: alternate;
-  -ms-animation-direction: alternate;
-  animation-direction: alternate;
-}
-#loading-box .loading-image-dot {
-  width: 30px;
-  height: 30px;
-  background: #6bdf8f;
-  position: absolute;
-  border-radius: 50%;
-  border: 6px solid #fff;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(18px, 24px);
-  -moz-transform: translate(18px, 24px);
-  -o-transform: translate(18px, 24px);
-  -ms-transform: translate(18px, 24px);
-  transform: translate(18px, 24px);
-}
-#loading-box.loaded .loading-bg {
-  opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  filter: alpha(opacity=0);
-  z-index: -1000;
-}
-@-moz-keyframes loadingAction {
-  0% {
-    opacity: 1;
-    -ms-filter: none;
-    filter: none;
-  }
-  100% {
-    opacity: 0.4;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
-    filter: alpha(opacity=40);
-  }
-}
-@-webkit-keyframes loadingAction {
-  0% {
-    opacity: 1;
-    -ms-filter: none;
-    filter: none;
-  }
-  100% {
-    opacity: 0.4;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
-    filter: alpha(opacity=40);
-  }
-}
-@-o-keyframes loadingAction {
-  0% {
-    opacity: 1;
-    -ms-filter: none;
-    filter: none;
-  }
-  100% {
-    opacity: 0.4;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
-    filter: alpha(opacity=40);
-  }
-}
-@keyframes loadingAction {
-  0% {
-    opacity: 1;
-    -ms-filter: none;
-    filter: none;
-  }
-  100% {
-    opacity: 0.4;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
-    filter: alpha(opacity=40);
-  }
-}
 #pagination .pagination {
   margin-top: 20px;
   text-align: center;
@@ -4388,118 +4068,6 @@ h1.page-title + .tag-cloud-list {
 #article-container ol p,
 #article-container ul p {
   margin: 0 0 8px;
-}
-#article-container h1,
-#article-container h2,
-#article-container h3,
-#article-container h4,
-#article-container h5,
-#article-container h6 {
-  -webkit-transition: all 0.2s ease-out;
-  -moz-transition: all 0.2s ease-out;
-  -o-transition: all 0.2s ease-out;
-  -ms-transition: all 0.2s ease-out;
-  transition: all 0.2s ease-out;
-}
-#article-container h1:before,
-#article-container h2:before,
-#article-container h3:before,
-#article-container h4:before,
-#article-container h5:before,
-#article-container h6:before {
-  position: absolute;
-  top: calc(50% - 7px);
-  color: #f47466;
-  content: '\f863';
-  line-height: 1;
-  -webkit-transition: all 0.2s ease-out;
-  -moz-transition: all 0.2s ease-out;
-  -o-transition: all 0.2s ease-out;
-  -ms-transition: all 0.2s ease-out;
-  transition: all 0.2s ease-out;
-}
-#article-container h1:hover:before,
-#article-container h2:hover:before,
-#article-container h3:hover:before,
-#article-container h4:hover:before,
-#article-container h5:hover:before,
-#article-container h6:hover:before {
-  color: #49b1f5;
-}
-#article-container h1 {
-  padding-left: 32px;
-}
-#article-container h1:before {
-  margin-left: -26px;
-  font-size: 20px;
-}
-#article-container h1:hover {
-  padding-left: 38px;
-}
-#article-container h2 {
-  padding-left: 30px;
-}
-#article-container h2:before {
-  margin-left: -24px;
-  font-size: 18px;
-}
-#article-container h2:hover {
-  padding-left: 36px;
-}
-#article-container h3 {
-  padding-left: 28px;
-}
-#article-container h3:before {
-  margin-left: -22px;
-  font-size: 16px;
-}
-#article-container h3:hover {
-  padding-left: 34px;
-}
-#article-container h4 {
-  padding-left: 26px;
-}
-#article-container h4:before {
-  margin-left: -20px;
-  font-size: 14px;
-}
-#article-container h4:hover {
-  padding-left: 32px;
-}
-#article-container h5 {
-  padding-left: 24px;
-}
-#article-container h5:before {
-  margin-left: -18px;
-  font-size: 12px;
-}
-#article-container h5:hover {
-  padding-left: 30px;
-}
-#article-container h6 {
-  padding-left: 24px;
-}
-#article-container h6:before {
-  margin-left: -18px;
-  font-size: 12px;
-}
-#article-container h6:hover {
-  padding-left: 30px;
-}
-#article-container ol p,
-#article-container ul p {
-  margin: 0 0 8px;
-}
-#article-container li::marker {
-  color: #49b1f5;
-  font-weight: 600;
-  font-size: 1.05em;
-}
-#article-container li:hover::marker {
-  color: var(--pseudo-hover);
-}
-#article-container ul > li {
-  list-style-type: circle;
 }
 #article-container > :last-child {
   margin-bottom: 0 !important;
@@ -4706,6 +4274,7 @@ h1.page-title + .tag-cloud-list {
   text-align: center;
 }
 .post-reward .reward-button {
+  position: relative;
   display: inline-block;
   padding: 0.2rem 1.2rem;
   background: var(--btn-bg);
@@ -4732,11 +4301,12 @@ h1.page-title + .tag-cloud-list {
 .post-reward .reward-button .reward-main {
   position: absolute;
   bottom: 40px;
-  left: -55%;
+  left: 50%;
+  translate: -50% 0;
   z-index: 100;
   display: none;
   padding: 0 0 15px;
-  width: 150%;
+  width: max-content;
 }
 .post-reward .reward-button .reward-main .reward-all {
   display: -webkit-box;
@@ -4778,12 +4348,13 @@ h1.page-title + .tag-cloud-list {
   vertical-align: top;
 }
 .post-reward .reward-button .reward-main .reward-all .reward-item img {
-  width: 130px;
-  height: 130px;
+  height: 140px;
+  width: auto;
+  object-fit: contain;
 }
 .post-reward .reward-button .reward-main .reward-all .reward-item .post-qr-code-desc {
   padding-top: 0.4rem;
-  width: 130px;
+  width: auto;
   color: #858585;
 }
 #rightside {
@@ -5199,30 +4770,16 @@ mjx-container[display],
   line-height: normal !important;
 }
 .aplayer {
-  color: #4c4948;
+  color: #1f1f1f;
 }
 #article-container .aplayer {
   margin: 0 0 20px;
-}
-#article-container .aplayer ol,
-#article-container .aplayer ul {
-  margin: 0;
-  padding: 0;
-}
-#article-container .aplayer ol li,
-#article-container .aplayer ul li {
-  margin: 0;
-  padding: 0 15px;
-}
-#article-container .aplayer ol li:before,
-#article-container .aplayer ul li:before {
-  content: none;
 }
 .snackbar-css {
   border-radius: 5px !important;
 }
 [data-theme="dark"] #web_bg {
-  background: url(https://picbed.skylerplus.top/bg/nightbg.jpg);
+  background: var(--darkmode-bg);
   background-attachment: local;
   background-position: center;
   background-size: cover;
@@ -5230,14 +4787,14 @@ mjx-container[display],
 }
 @media screen and (max-width: 800px) {
   #web_bg {
-    background: url(https://picbed.skylerplus.top/bg/daily.jpg);
+    background: var(--mobileday-bg);
     background-attachment: local !important;
     background-position: center !important;
     background-size: cover !important;
     background-repeat: no-repeat !important;
   }
   [data-theme="dark"] #web_bg {
-    background: url(https://picbed.skylerplus.top/bg/nightbg.jpg);
+    background: var(--mobilenight-bg);
     background-attachment: local !important;
     background-position: center !important;
     background-size: cover !important;
@@ -5676,13 +5233,13 @@ blockquote.pullquote.right {
 .note.modern {
   border: 1px solid transparent !important;
   background-color: #f5f5f5;
-  color: #4c4948;
+  color: #1f1f1f;
 }
 .note.flat {
   border: initial;
   border-left: 5px solid #eee;
   background-color: #f9f9f9;
-  color: #4c4948;
+  color: #1f1f1f;
 }
 .note h2,
 .note h3,
@@ -6144,7 +5701,7 @@ blockquote.pullquote.right {
 }
 [data-theme='dark'] {
   --global-bg: #0d0d0d;
-  --font-color: rgba(255,255,255,0.7);
+  --font-color: rgba(255,255,255,0.8);
   --hr-border: rgba(255,255,255,0.4);
   --hr-before-color: rgba(255,255,255,0.7);
   --search-bg: #121212;
@@ -6238,7 +5795,7 @@ blockquote.pullquote.right {
   filter: brightness(0.8);
 }
 [data-theme='dark'] img {
-  filter: blur(0) brightness(0.8);
+  filter: brightness(0.8);
 }
 [data-theme='dark'] #aside-content .aside-list > .aside-list-item:not(:last-child) {
   border-bottom: 1px dashed rgba(255,255,255,0.1);
@@ -6500,21 +6057,168 @@ blockquote.pullquote.right {
 .read-mode #article-container .note .note-icon {
   color: var(--font-color);
 }
+/* ============================================================================
+ * themes/fomalhaut/source/css/_custom/custom.css
+ * —— Fomalhaut 主题的「站点自定义样式」总表（主题样式之后的最后一道覆盖层）
+ * ----------------------------------------------------------------------------
+ * 【它是怎么生效的】
+ *   themes/fomalhaut/source/css/index.styl 用 `@import '_custom/custom.css'` 把它内联进
+ *   public/css/index.css（站点只请求一个 CSS，没有单独请求）。所以：
+ *   · 改完必须重新 hexo generate 才看得到（只改这里不重新生成 = 白改）；
+ *   · 它排在主题各 *.styl 之后 → 同特异性下这里的规则赢，多数情况不需要 !important。
+ * ----------------------------------------------------------------------------
+ * 【改这里的约定】
+ *   1. 能用 _config.fomalhaut.yml 的开关解决的，优先走配置；配置里抽出来的注入样式
+ *      统一放 source/css/site-inject.css —— 本文件只放「对主题样式的覆盖」。
+ *   2. 新增一节：用「块注释 + 小节标题（用途）」起头，并在下面的目录里补一行。
+ *   3. !important 全文 246 处：只在压不过主题内联样式 / Element UI / 运行时 JS 写入时用。
+ *   4. 明暗两套用 [data-theme="light"] / [data-theme="dark"] 前缀；几何写一份，颜色写两份。
+ *   5. 手机端适配就近写 @media，**不要**为了整齐挪到文件末尾：
+ *      同名同权重的规则后写的赢，搬动 = 改变层叠结果（真会改坏东西）。
+ *   6. 行号只作导航用，编辑后必然漂移 → 用 Ctrl+F 搜标题或选择器定位。
+ * ----------------------------------------------------------------------------
+ * 【分节目录】（括号里是所在行号）
+ *   154  全局色板：--theme-color 及派生色、代码块底色 —— 换主题色的源头就在这里
+ *   194  滚动条（三套并存：@supports 标准属性 / ::-webkit-scrollbar 桌面 / #mscrollbar 手机自绘）
+ *   293  @font-face 字体引入（正文 7 款 + 代码块 4 款）：family 名同时是美化面板按钮 onclick 传的值，改名要三处一起改
+ *   421  滚动时顶栏显示的标题 #page-name 居中
+ *   487  首页文章卡片 / 页面底色 / 明暗遮罩 / 目录 / 超链接 / 代码框 / 鼠标样式……主题默认样式的第一轮覆盖（本文件最大的一段）
+ *   666  Twikoo 评论区（输入框高度 / 表情面板 / 气泡 / 夜间配色）
+ *   891  h1~h6 标题前的风车图标：速度 / 颜色 / hover 反向
+ *   979  B 站 iframe 16:9 自适应、图片模糊渐显 imgblur、背景滤镜
+ *   1139  标题增强、全局宽度、侧栏宽度、平板适配
+ *   1297  美化设置面板 .winbox / 背景图墙 .bgbox（与 source/js/modules/settings.js 强耦合）
+ *   1427  侧栏个人卡片背景图（浅色 springBg.png / 深色 aurora.webp）
+ *   1481  APlayer 播放器美化（圆角 / 浅色底 / 主题色滚动条 / 歌词遮罩）
+ *   1679  音乐页：歌单来源 / 简介 / 热评
+ *   1771  设置面板里「背景图片链接」输入框的 placeholder
+ *   1811  HEO 加载动画头像
+ *   1823  顶栏常驻与导航栏标题
+ *   1917  主题色选择器与主题色适配覆盖区
+ *   2218  设置面板的开关按钮 / 数字框 / 帧率显示
+ *   2332  侧边栏按钮 #rightside、翻页、标签圆角
+ *   2471  顶部胶囊加载条 .pace（animation: gradient）
+ *   2530  右键菜单 #rightMenu
+ *   2589  页脚心跳 / 星空 / 雪花 / 小猫咪
+ *   2781  版权、二级菜单圆角、搜索框、公告栏、关于页、欢迎信息、霓虹灯
+ *   2892  自定义页脚 #ft（站点统计 / 友链 / 格言 / 广告位占位）
+ *   3055  手机侧栏、代码行号、右侧栏宽度、齿轮箭头圆角、作者状态
+ *   3174  页脚波浪动画 .main-hero-waves-area
+ *   3253  图片圆角与边框、twikoo 聚焦、友链描述、目录、diff
+ *   3348  夜间友链字色、信息卡彩带、霓虹灯发光字 keyframes、按钮、分割线、必应壁纸、转圈颜色
+ *   3640  侧栏显隐 / 侧栏位置（CSS 变量驱动，配合美化面板）
+ *   3669  置顶文章角标 post-sticky-badge（含 prefers-reduced-motion 降级）
+ *   3756  侧栏个人信息卡片改版：玻璃拟态 + 马克笔名字（2026-02-16）
+ *   3937  美化面板：手机端排布 .opt/.bgp/.colorRow/.picbtn + 恢复默认设置与切换背景按钮主题色化 + 面板打开时 #rightside 让位
+ * ----------------------------------------------------------------------------
+ * 【媒体查询索引】@media 共 26 条（按出现顺序；括号里是断点与它管的东西）
+ *   259  max-width: 768px              html / #mscrollbar：手机端隐藏系统滚动条，改用自绘条
+ *   428  max-width: 768px              center#name-container：顶栏标题居中
+ *   659  max-width: 500px              #cursor：小屏鼠标跟随
+ *   714  max-width: 768px              Twikoo 表情（Menhera 系列）大小
+ *   842  min-width: 1024px             Twikoo 评论卡片宽度与头像
+ *   1038  max-width: 900px              .aside-content 侧栏宽度
+ *   1098  max-width: 1200px             .site-card 友链卡
+ *   1103  max-width: 900px              .site-card 友链卡
+ *   1108  max-width: 600px              .site-card 友链卡
+ *   1133  max-width: 1000px             .gallery-group 相册分组
+ *   1375  max-width: 768px              .pimgbox / .imgbox / .box / .bgbox 图墙
+ *   1852  min-width: 600px              #nav 顶栏
+ *   2418  min-width: 600px              .blog-slider 轮播
+ *   2654  max-width: 768px              #universe 星空
+ *   2682  max-width: 768px              #snow 雪花
+ *   2747  max-width: 768px              .neko / #myscoll 小猫咪与滚动条
+ *   2758  min-width: 768px              卡片内 fancybox / video 宽度
+ *   2767  max-width: 768px              卡片内 fancybox / video 宽度
+ *   2831  max-width: 600px              .magnet_item 磁力链接
+ *   3019  max-width: 768px              页脚 #ft 分栏 / 广告位
+ *   3033  max-width: 576px              页脚 t-top 顶部条
+ *   3066  min-width: 900px              #aside-content 侧栏宽度（宽屏）
+ *   3242  max-width: 768px              （裸语法）页脚波浪 .waves-svg
+ *   3654  min-width: 1069px             .recent-post-item 卡片宽度
+ *   3748  prefers-reduced-motion: reduce（裸语法）关闭置顶角标流光动画
+ *   4020  max-width: 768px              美化面板：开关行 / 滤镜参数 / 主题色圈 / 字体按钮（手机端重排）
+ * ----------------------------------------------------------------------------
+ * 【动画索引】@keyframes 共 19 个（含 -webkit- 前缀版）
+ *   466  sub_menus                       主题 _global/function.styl 同名动画的覆盖版：把 translateX(-50%) 写进关键帧，居中不被动画吃掉
+ *   870  -webkit-keyframes tk-extras-fadeInTwikoo 评论「设备信息」淡入（.tk-content:hover + .tk-extras）
+ *   880  tk-extras-fadeIn                同上（无前缀版）
+ *   902  -webkit-keyframes ccc           风车旋转（h1::before ~ h6::before）
+ *   912  ccc                             同上（无前缀版）
+ *   1003  imgblur                         首页头图 / 背景从模糊到清晰（#page-header, #web_bg）
+ *   1012  -webkit-keyframes imgblur       同上，内容是 -webkit-filter 版（Chrome 会忽略它，留给老 Safari）
+ *   1225  owoIn                           评论区表情面板弹入（#owo-big）
+ *   1447  huxi_light                      浅色主题下头像呼吸灯（[data-theme="light"] .avatar-img）
+ *   1458  huxi_dark                       深色主题下头像呼吸灯
+ *   2518  gradient                        顶部胶囊加载条 .pace .pace-progress
+ *   2595  -webkit-keyframes iconAnimate   页脚心跳 #heartbeat
+ *   2616  iconAnimate                     同上（无前缀版）
+ *   3089  ddd                             首页卡片右下角箭头 .recent-post-arrow
+ *   3233  move-forever                    页脚波浪 .parallax > use
+ *   3382  light_15px                      霓虹灯发光字（15px 档）——注意：全项目已找不到 animation 引用它的地方，目前是「备着」状态
+ *   3415  light_10px                      霓虹灯发光字（10px 档），同上
+ *   3448  light_5px                       霓虹灯发光字（5px 档），同上
+ *   3731  post-sticky-shine               置顶角标流光
+ * ----------------------------------------------------------------------------
+ * 【字体索引】@font-face 共 6 个，全部为开源可商用字体（OFL），源码统一走 cdn.jsdelivr.net 的 @fontsource/*
+ *   常规字体 3 款：LXGW（霞鹜文楷，默认）· SourceHanSerif（思源宋体）· LXGWNeoXiHei（霞鹜新晰黑）
+ *   代码字体 3 款：JetBrainsMono · FiraCode · SourceCodePro
+ *   想换成自己的字体：改本文件末尾「字体引入」一节的 src 即可，family 名保持不变最省事。
+ * ----------------------------------------------------------------------------
+ * 【已知问题 / 坑】（P3 盘点确认的现状；本次只清理死代码，没有改行为）
+ *   1. 同一个选择器被拆散在多处 —— 改之前先 Ctrl+F 全找一遍，找到第一个不算数：
+ *        · .el-textarea__inner（@594 背景图 / @3363 圆角）
+ *        · [data-theme="dark"] .tk-master .tk-content（@654 边框 / @682 底色文字）
+ *        · [data-theme="dark"] #aside-content > .card-widget.card-info（@1282 背景图 / @3739 阴影）
+ *        · #card-info-btn（@1319 主题色底 / @3712 玻璃按钮，后者覆盖）
+ *        · #card-info-btn:hover（@1324 / @3724）
+ *        · #post .tag_share .post-meta__tags（@1995 边框 / @3380 圆角）
+ *        · .settings input[type="checkbox"]（@2067 主体 / @2102 只写了 transition）
+ *        · .settings input[type="checkbox"]:before（@2084 / @2105）
+ *        · .settings input[type="checkbox"]:checked（@2094 / @2108，border-color 只在前者）
+ *        · .settings input[type="checkbox"]:checked:before（@2098 / @2111）
+ *        · [data-theme="dark"] .magnet_link_context（@2684 底色 / @2688 圆角）
+ *   2. .settings input[type="checkbox"] 的 `transition: border background-color box-shadow;`
+ *      漏了时长，浏览器当无效声明丢弃（想生效要写 `transition: .2s`）；
+ *      `.settings .content input[type="number"]` 有一模一样的毛病。
+ *   3. `.pace { border: 1px #e3e8f7; }` 少了线型，border-style 默认 none → 等于没边框。
+ *   4. .settings / .winbox 相关样式与 source/js/modules/settings.js 一一对应：
+ *      改类名、改面板结构时，CSS 与 JS 必须一起改。
+ *   5. 侧栏 #rightside 的按钮尺寸（1196 的 38×38）与侧栏位移（2336 的
+ *      translateX(-58px)）跟侧栏宽度布局强耦合，改宽度时两处一起看。
+ *   6. 浅浅色主题下不少霓虹灯动画被 `animation: none !important` 关掉（见 3348 一节），
+ *      所以 light_*px 关键帧在浅色下不会跑，这是有意的。
+ * ----------------------------------------------------------------------------
+ * 【本次整理记录】2026-10-03 屎山重构 P3：4124 行 → 3935 行
+ *   · 删除 4 段整块死代码（各留「已清理」墓碑注释，Ctrl+F 搜「已清理」可跳过去）：
+ *     TianliGPT 整段 189 行（功能已下线）、侧栏卡片动态渐变 50 行（含写在注释里的
+ *     Gradient keyframes）、孤儿 @keyframes Gradient（无任何 animation 引用）、
+ *     .article-sort-item:before 的 `order:` 笔误块。
+ *   · 删除 42 条 -moz-/-ms-/-o- 前缀声明 + 3 条 IE filter + 1 条 -webkit-pointer-events
+ *     + 4 个 @-moz-/@-o-keyframes 块（Firefox 16+ / Opera 15+ 起都支持无前缀）。
+ *     保留 -webkit-*（浏览器至今仍当别名识别），也保留 -webkit-backdrop-filter 与
+ *     -moz-osx-font-smoothing（前者 Safari 要、后者 Firefox-macOS 要）。
+ *   · 本次没有移动、改写任何一条规则，只做了「删死代码 + 加这份索引」。
+ *   · 回滚：把 bak/2026-10-03-屎山重构/before/themes/fomalhaut/source/css/_custom/custom.css
+ *     复制回原位即可。
+ * ========================================================================== */
+/* root伪类指定全局颜色 */
 /* root伪类指定全局颜色 */
 :root {
   --blue-custom: #5ea6e5;
   --loading-color: rgba(207, 246, 247, 0.92);
   --border-color: #c9c9c9;
-  --color-red: rgb(241, 71, 71);
-  --color-orange: rgb(241, 162, 71);
-  --color-yellow: rgb(241, 238, 71);
-  --color-purple: rgb(179, 71, 241);
+  --color-red: rgb(239, 90, 90);
+  --color-orange: rgb(228, 149, 66);
+  --color-yellow: rgb(194, 205, 90);
+  --color-purple: rgb(205, 90, 195);
+  --color-purepurple: rgb(147, 90, 205);
   --color-blue: rgb(102, 204, 255);
-  --color-gray: rgb(226, 226, 226);
   --color-green: rgb(57, 197, 187);
-  --color-whitegray: rgb(241, 241, 241);
+  --color-puregreen: rgb(90, 205, 130);
+  --color-gray: rgb(150, 150, 150);
   --color-pink: rgb(237, 112, 155);
-  --color-black: rgb(0, 0, 0);
+  --color-black: rgb(45, 45, 45);
   --color-darkblue: rgb(97, 100, 159);
   --color-heoblue: rgb(66, 90, 239);
   --btn-bg: var(--theme-color) !important;
@@ -6526,6 +6230,18 @@ blockquote.pullquote.right {
   --hltools-bg: #1c1c1c;
   /* 代码框背景色 */
   --hl-bg: #282c34;
+}
+
+/* Chrome/Edge 121+ 支持了标准属性 scrollbar-color / scrollbar-width，
+   一旦它们不是 auto（本主题在 _global/index.styl 里为 Firefox 设了 thin + 主题色），
+   浏览器就会完全忽略 ::-webkit-scrollbar 伪元素样式 —— 下面的斜条纹也就不会出现。
+   所以只在支持 ::-webkit-scrollbar 的浏览器里把标准属性退回 auto，让伪元素样式重新生效；
+   Firefox 不认识 selector(::-webkit-scrollbar)，会跳过这段，继续用标准双色滚动条。 */
+@supports selector(::-webkit-scrollbar) {
+  * {
+    scrollbar-color: auto !important;
+    scrollbar-width: auto !important;
+  }
 }
 
 /* 滚动条样式 */
@@ -6541,21 +6257,69 @@ blockquote.pullquote.right {
 
 ::-webkit-scrollbar-thumb {
   background-color: var(--theme-color);
-  background-image: -webkit-linear-gradient(
+  /* 发廊转筒风：静态斜条纹，主题色深浅交替（浅=叠白 45%，深=叠黑 20%）
+     条纹宽 9px、周期 18px —— 3px 太密、7px 仍偏密，9px 是松弛又不糊成色块的档位 */
+  background-image: repeating-linear-gradient(
     45deg,
-    rgba(255, 255, 255, 0.4) 25%,
-    transparent 25%,
-    transparent 50%,
-    rgba(255, 255, 255, 0.4) 50%,
-    rgba(255, 255, 255, 0.4) 75%,
-    transparent 75%,
-    transparent
+    rgba(255, 255, 255, 0.45) 0 9px,
+    rgba(0, 0, 0, 0.2) 9px 18px
   );
   border-radius: 2em;
 }
 
 ::-webkit-scrollbar-corner {
   background-color: transparent;
+}
+
+/* 手机端自绘滚动条
+   手机浏览器（含 Chromium 的 overlay 滚动条模式）只用系统滚动条，会完全忽略 ::-webkit-scrollbar，
+   所以电脑上那条主题色斜条纹在手机宽度下根本不会出现。这里准备一条同样式样的自绘滚动条，
+   由 source/js/fomal.js 末尾的脚本驱动：固定在右边缘、随滚动进度移动；只要页面能滚就一直显示（与电脑端“滚动条不隐藏”的取舍一致）。 */
+#mscrollbar {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 2px;
+  width: 8px;
+  border-radius: 2em;
+  background-color: rgba(73, 177, 245, 0.2);
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+#mscrollbar.mscrollbar-on {
+  opacity: 1;
+}
+
+#mscrollbar-thumb {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  border-radius: 2em;
+  background-color: var(--theme-color);
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.45) 0 9px,
+    rgba(0, 0, 0, 0.2) 9px 18px
+  );
+}
+
+/* ≤768px：隐藏系统滚动条，改用上面那条自绘的，免得出现两条 */
+@media screen and (max-width: 768px) {
+  html {
+    scrollbar-width: none !important;
+  }
+  html::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+  #mscrollbar {
+    display: block;
+  }
 }
 
 ::-moz-selection {
@@ -6579,47 +6343,35 @@ blockquote.pullquote.right {
   border-radius: 2em !important;
 }
 
-/* 字体引入 */
-@font-face {
-  font-family: YSHST;
-  src: url(https://data-static.netdun.net/Fomalhaut/fonts/优设好身体.woff2);
-  font-display: swap;
-}
+/* 字体引入
+   常规（正文）字体 3 款 + 代码块字体 3 款，**全部为开源可商用字体**（SIL OFL 1.1），
+   统一走公共 CDN（jsDelivr 上的 @fontsource/* 包），不依赖任何自建对象存储。
+   family 名 = 美化设置面板按钮 onclick 传的值 = localStorage.font / codeFont 的值，
+   也是 _config.fomalhaut.yml 里 font-family / code-font-family 引用的名字，改名时这几处要一起改。
+   *** 想换成自己的字体：把下面的 src 换成你自己的 woff2 地址即可，family 名保持不变最省事。 *** */
 
-@font-face {
-  font-family: MiSans;
-  src: url(https://data-static.netdun.net/Fomalhaut/fonts/MiSans.woff2);
-  font-display: swap;
-}
 
-@font-face {
-  font-family: HYTMR;
-  src: url(https://data-static.netdun.net/Fomalhaut/fonts/HYTangMeiRen55W.woff2);
-  font-display: swap;
-}
 
-@font-face {
-  font-family: LXGW;
-  src: url(https://data-static.netdun.net/Fomalhaut/fonts/霞鹜文楷.woff2);
-  font-display: swap;
-}
 
-@font-face {
-  font-family: TTQHB;
-  src: url(https://data-static.netdun.net/Fomalhaut/fonts/甜甜圈海报字体.woff2);
-  font-display: swap;
-}
 
-@font-face {
-  font-family: Consolas_1;
-  src: url(https://data-static.netdun.net/Fomalhaut/fonts/Consolas.woff2);
-  font-display: swap;
-}
 
-@font-face {
-  font-family: ZhuZiAWan;
-  src: url(https://data-static.netdun.net/Fomalhaut/fonts/ZhuZiAWan2.woff2);
-  font-display: swap;
+/* —— 代码块字体 ——
+   pre/code 的字体不写死，改由 --code-font 变量决定
+   （_config.fomalhaut.yml 的 font.code-font-family 写成 var(--code-font, JetBrainsMono), var(--global-font), ...），
+   面板切换代码字体时只改这个变量，不用重写样式表。 */
+
+
+
+
+
+
+/* 代码块字体：主题只给 #article-container pre/code 设了代码字体，
+   这里把文章区以外的 pre/code/kbd/samp 也接到同一个变量上，保证「凡是渲染代码的地方」都跟面板走 */
+pre,
+code,
+kbd,
+samp {
+  font-family: var(--code-font, JetBrainsMono), var(--global-font), "Microsoft YaHei", Menlo, "PingFang SC", "Microsoft JhengHei", sans-serif !important;
 }
 
 /* 特定部件字体调用 */
@@ -6659,9 +6411,8 @@ h1.post-title {
 center#name-container {
   position: absolute !important;
   width: fit-content !important;
-  left: 42% !important;
-  /* transform: translateX(-50%) !important; */
-  /* transform: translateY(-100%) !important; */
+  left: 50% !important;
+  transform: translateX(-50%) !important;
 }
 @media screen and (max-width: 768px) {
   center#name-container {
@@ -6690,24 +6441,26 @@ center#name-container {
 #nav .menus_items .menus_item:hover .menus_item_child {
   display: flex !important;
 }
-/* 这里的2是代表导航栏的第二个元素，即有子菜单的元素，可以按自己需求修改 */
-.menus_items .menus_item:nth-child(2) .menus_item_child {
-  left: -95px;
+/* 【2026-10-01 改】二级菜单一律在父栏目水平居中（宽度自适应）
+   原先按栏目写死的 nth-child(2)~(7) left: -149px ~ -105px 偏移已删除：
+   「标签/分类」合并成「统计」后，文章 子菜单变窄，写死的偏移就对不上了 */
+#nav .menus_items .menus_item .menus_item_child {
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
 }
-.menus_items .menus_item:nth-child(3) .menus_item_child {
-  left: -103px;
-}
-.menus_items .menus_item:nth-child(4) .menus_item_child {
-  left: -102px;
-}
-.menus_items .menus_item:nth-child(5) .menus_item_child {
-  left: -117px;
-}
-.menus_items .menus_item:nth-child(6) .menus_item_child {
-  left: -133px;
-}
-.menus_items .menus_item:nth-child(7) .menus_item_child {
-  left: -105px;
+/* 主题 _global/function.styl 里的 sub_menus 关键帧只做 translateY，
+   会盖掉上面的 translateX(-50%)，所以同名覆盖一份（写在后面即生效），
+   把 -50% 一起写进关键帧：进场动画保留，居中也不会丢 */
+@keyframes sub_menus {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
 }
 
 /*top-img黑色透明玻璃效果移除，不建议加，除非你执着于完全一图流或者背景图对比色明显 */
@@ -6717,13 +6470,12 @@ center#name-container {
 
 /* 置顶滚动圆角 */
 .blog-slider__img img {
-  border-radius: 20px !important;
+  border-radius: 18px !important;
 }
 
 /* 首页文章卡片 */
 #recent-posts > .recent-post-item {
   background: var(--trans-light);
-  backdrop-filter: var(--backdrop-filter);
   border-radius: 25px;
   border: var(--border-style);
 }
@@ -6731,7 +6483,6 @@ center#name-container {
 /* 首页侧栏卡片 */
 #aside-content .card-widget {
   background: var(--trans-light);
-  backdrop-filter: var(--backdrop-filter);
   border-radius: 18px;
   border: var(--border-style);
   padding: 20px;
@@ -6742,17 +6493,11 @@ div#post,
 div#page,
 div#archive {
   background: var(--trans-light);
-  backdrop-filter: var(--backdrop-filter);
   border: var(--border-style);
   border-radius: 20px;
 }
 
 /* 导航栏颜色 */
-#page-header.nav-fixed #nav {
-  background: linear-gradient(60deg, #ffd7e4 0, #c8f1ff 93%);
-  opacity: 0.95;
-  backdrop-filter: var(--backdrop-filter);
-}
 [data-theme="dark"] #page-header.nav-fixed #nav {
   background: rgba(0, 0, 0, 0.95) !important;
 }
@@ -6767,10 +6512,18 @@ div#archive {
 }
 
 /* 白天模式头图与页脚遮罩 */
-[data-theme="light"] #page-header:before,
-[data-theme="light"] #footer::before {
-  background-color: rgba(0, 0, 0, 0.18) !important;
+[data-theme="light"] #page-header:before {
+  background-color: rgba(0, 0, 0, 0.2) !important;
   z-index: -3;
+}
+[data-theme="light"] #footer:before {
+  background-color: rgba(0, 0, 0, 0.25) !important;
+  z-index: -3;
+}
+
+/* 夜间模式全局黑暗遮罩 */
+[data-theme="dark"] #web_bg:before {
+  background-color: rgba(0, 0, 0, 0.5) !important;
 }
 
 /* 头图隐藏 */
@@ -6778,7 +6531,7 @@ div#archive {
   background: transparent !important;
 }
 /* 夜间模式页脚遮罩隐藏 */
-[data-theme="dark"] #footer::before {
+[data-theme="dark"] #footer:before {
   background: transparent !important;
 }
 /* 夜间模式页脚头部遮罩隐藏 */
@@ -6883,18 +6636,19 @@ div#archive {
   opacity: 0.1;
   transform: scale(2.5);
   -webkit-transform: scale(2.5);
-  -moz-transform: scale(2.5);
-  -ms-transform: scale(2.5);
-  -o-transform: scale(2.5);
 }
 
 #cursor.active {
   opacity: 0.5;
   transform: scale(0.5);
   -webkit-transform: scale(0.5);
-  -moz-transform: scale(0.5);
-  -ms-transform: scale(0.5);
-  -o-transform: scale(0.5);
+}
+
+/* 手机端不显示 */
+@media screen and (max-width: 500px) {
+  #cursor {
+    display: none !important;
+  }
 }
 
 /* twikoo评论美化 */
@@ -7006,14 +6760,9 @@ div#archive {
 }
 /* 评论块气泡化修改 */
 .tk-content {
-  /* linear-gradient(to bottom, #2193b0, #6dd5ed); */
-  background: linear-gradient(
-    to top,
-    #4568dc,
-    #b06ab3
-  ); /*默认模式访客气泡配色*/
+  background: #8d6ca3;
   padding: 10px;
-  color: #fff; /*默认模式访客气泡字体配色*/
+  color: #fff;
   border-radius: 10px;
   font-size: 16px !important;
   width: fit-content;
@@ -7034,43 +6783,23 @@ div#archive {
 .tk-content a {
   color: #eeecaa; /*默认模式超链接配色*/
 }
-.tk-content::before {
-  content: "";
-  width: 0;
-  height: 0;
-  position: absolute;
-  top: 20px;
-  left: -13px;
-  border-top: 2px solid transparent;
-  border-bottom: 20px solid transparent;
-  border-right: 15px solid transparent; /*默认模式访客气泡小三角配色*/
-  border-left: 0px solid transparent;
-}
+
 .tk-master .tk-content {
-  background: linear-gradient(
-    to top,
-    #43cea2,
-    #185a9d
-  ); /*默认模式博主气泡配色*/
+  background: #29b19e;
   color: #fff; /*默认模式博主气泡字体配色*/
   width: fit-content;
   max-width: 100%;
+  border: 0.5px solid #c3c3c3;
 }
+
+[data-theme="dark"] .tk-master .tk-content {
+  border: 0.5px solid #535353;
+}
+
 .tk-master .tk-content a {
   color: #eeecaa;
 }
-.tk-master .tk-content::before {
-  content: "";
-  width: 0;
-  height: 0;
-  position: absolute;
-  top: 20px;
-  left: -13px;
-  border-top: 2px solid transparent;
-  border-bottom: 20px solid transparent;
-  border-right: 15px solid transparent; /*默认模式博主气泡小三角配色*/
-  border-left: 0px solid transparent;
-}
+
 .tk-row[data-v-d82ce9a0] {
   max-width: 100%;
   width: fit-content;
@@ -7082,7 +6811,7 @@ div#archive {
 
 /* 夜间模式配色，具体比照上方默认模式class */
 [data-theme="dark"] .tk-content {
-  background: #000;
+  background: #3a2c44;
   color: #fff;
 }
 [data-theme="dark"] .tk-content a {
@@ -7092,17 +6821,11 @@ div#archive {
   border-right: 15px solid #000;
 }
 [data-theme="dark"] .tk-master .tk-content {
-  background: #000;
+  background: #26453a;
   color: #fff;
 }
 [data-theme="dark"] .tk-master .tk-content a {
   color: #dfa036;
-}
-[data-theme="dark"] .tk-master .tk-content::before {
-  border-top: 2px solid transparent;
-  border-bottom: 20px solid transparent;
-  border-right: 15px solid #000;
-  border-left: 0px solid transparent;
 }
 /* 自适应内容 */
 @media screen and (min-width: 1024px) {
@@ -7111,91 +6834,44 @@ div#archive {
     max-width: 75%;
     width: fit-content;
   }
-  .tk-master .tk-content {
-    width: 75%;
-  }
-  .tk-master .tk-content::before {
-    left: 100%;
-    border-left: 15px solid transparent;
-    border-right: 0px solid transparent;
-  }
+
   .tk-master .tk-avatar {
     position: relative;
-    left: calc(75% + 70px);
+    /* left: calc(75% + 70px); */
   }
   .tk-master .tk-row[data-v-d82ce9a0] {
     position: relative;
     top: 0px;
     left: calc(75% - 230px);
   }
-  [data-theme="dark"] .tk-master .tk-content::before {
-    border-left: 15px solid #000;
-    border-right: 0px solid transparent;
-  }
 }
 /* 设备名称常态隐藏，悬停评论时显示 */
 .tk-extras {
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  filter: alpha(opacity=0);
 }
 .tk-content:hover + .tk-extras {
   -webkit-animation: tk-extras-fadeIn 0.5s linear;
-  -moz-animation: tk-extras-fadeIn 0.5s linear;
-  -o-animation: tk-extras-fadeIn 0.5s linear;
-  -ms-animation: tk-extras-fadeIn 0.5s linear;
   animation: tk-extras-fadeIn 0.5s linear;
   -webkit-animation-fill-mode: forwards;
-  -moz-animation-fill-mode: forwards;
-  -o-animation-fill-mode: forwards;
-  -ms-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
-@-moz-keyframes tk-extras-fadeIn {
-  from {
-    opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    filter: alpha(opacity=0);
-  }
-  to {
-    opacity: 1;
-    -ms-filter: none;
-    filter: none;
-  }
-}
+/* [P3 清理] 此处原有 @-moz-keyframes tk-extras-fadeIn（12 行）：Firefox 16+ / Opera 15+ 起已支持无前缀 @keyframes，删掉前缀版，无前缀版就在附近 */
 @-webkit-keyframes tk-extras-fadeIn {
   from {
     opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    filter: alpha(opacity=0);
   }
   to {
     opacity: 1;
-    -ms-filter: none;
     filter: none;
   }
 }
-@-o-keyframes tk-extras-fadeIn {
-  from {
-    opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    filter: alpha(opacity=0);
-  }
-  to {
-    opacity: 1;
-    -ms-filter: none;
-    filter: none;
-  }
-}
+/* [P3 清理] 此处原有 @-o-keyframes tk-extras-fadeIn（12 行）：Firefox 16+ / Opera 15+ 起已支持无前缀 @keyframes，删掉前缀版，无前缀版就在附近 */
 @keyframes tk-extras-fadeIn {
   from {
     opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    filter: alpha(opacity=0);
   }
   to {
     opacity: 1;
-    -ms-filter: none;
     filter: none;
   }
 }
@@ -7208,8 +6884,8 @@ h3::before,
 h4::before,
 h5::before,
 h6::before {
-  -webkit-animation: ccc 4s linear infinite;
-  animation: ccc 4s linear infinite;
+  -webkit-animation: ccc 6s linear infinite;
+  animation: ccc 6s linear infinite;
 }
 /* 控制风车转动方向 -1turn 为逆时针转动，1turn 为顺时针转动，相同数字部分记得统一修改 */
 @-webkit-keyframes ccc {
@@ -7310,8 +6986,8 @@ h6::before {
 /*3s为加载动画的时间，1为加载动画的次数，ease-in-out为动画效果*/
 #page-header,
 #web_bg {
-  -webkit-animation: imgblur 1s 1 ease-in-out;
-  animation: imgblur 1s 1 ease-in-out;
+  -webkit-animation: imgblur 0.8s 1 ease-in-out;
+  animation: imgblur 0.8s 1 ease-in-out;
 }
 @keyframes imgblur {
   0% {
@@ -7329,6 +7005,11 @@ h6::before {
   100% {
     -webkit-filter: blur(0px);
   }
+}
+
+/* 背景滤镜 */
+#web_bg {
+  filter: var(--bg-filter) !important;
 }
 
 /* 全局宽度 参考:https://yisous.xyz/posts/d1fc759/ */
@@ -7365,9 +7046,41 @@ h6::before {
 .site-card {
   width: calc(100% / 5 - 16px) !important;
   border-radius: 18px !important;
+  border: 1px solid #d3d3d3 !important;
+  padding: 5px !important;
 }
+/* 卡片高度不再写死：写死的高度是按旧的整页宽度(1400px)调的，
+   页面收窄到 1200px 后卡片变窄而高度不变，看起来又高又瘦。
+   现在由图片的 16:10 比例撑开，宽度变化时高度自动跟着变。 */
+.site-card:not(.mini-link) {
+  height: auto !important;
+}
+[data-theme="light"] .site-card {
+  background-color: var(--hh-trans-color);
+}
+[data-theme="dark"] .site-card {
+  border: 1px solid #525252 !important;
+  background-color: #343434e8 !important;
+}
+
+[data-theme="light"]
+  #article-container
+  .timeline
+  .timeline-item
+  .timeline-item-content {
+  background-color: var(--hh-trans-color) !important;
+}
+[data-theme="dark"]
+  #article-container
+  .timeline
+  .timeline-item
+  .timeline-item-content {
+  background-color: #232323 !important;
+}
+
 .site-card .img {
-  height: 165px !important;
+  height: auto !important;
+  aspect-ratio: 16 / 10;
   border-radius: 18px !important;
 }
 /* 适应宽度不同的设备 */
@@ -7387,9 +7100,23 @@ h6::before {
   }
 }
 
-/* Gallery一行显示更多 */
+.site-card:hover .img {
+  scale: 1.02 !important;
+}
+
+/* Gallery一行显示更多 + 整行居中 */
+#article-container .gallery-group-main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px 16px;
+}
+#article-container figure.gallery-group {
+  float: none;
+  margin: 0;
+}
 .gallery-group {
-  width: calc(33% - 8px) !important;
+  width: calc(33% - 11px) !important;
 }
 /* 适应宽度不同的设备 */
 @media screen and (max-width: 1000px) {
@@ -7404,14 +7131,8 @@ h6::before {
   background-color: var(--theme-color) !important;
   border-radius: 8px;
   -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  -ms-border-radius: 8px;
-  -o-border-radius: 8px;
   transition: 0.3s;
   -webkit-transition: 0.3s;
-  -moz-transition: 0.3s;
-  -ms-transition: 0.3s;
-  -o-transition: 0.3s;
   position: absolute;
   top: 0 !important;
   right: 0 !important;
@@ -7585,10 +7306,14 @@ button#go-up:hover #percent {
   background: #333 !important;
 }
 
+/* 背景图墙：grid 逐行排满（从左到右，满了再换到下一行）。
+   原来是 flex + justify-content:space-between：一行装不下整数张、或最后一行不满时，
+   剩下的图会被推到最左和最右，中间留一个大空洞 */
 .bgbox {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 20px;
+  align-items: start;
 }
 
 .pimgbox,
@@ -7599,6 +7324,20 @@ button#go-up:hover #percent {
   margin: 10px;
   border-radius: 10px !important;
   background-size: cover;
+}
+
+/* grid 版图墙：宽度交给列宽、间距交给 gap，不再用 margin 撑；
+   #define_colors 是 ID 规则，必须单独盖掉它的 width/margin */
+.bgbox > .pimgbox,
+.bgbox > .imgbox,
+.bgbox > .box {
+  width: 100%;
+  margin: 0;
+}
+
+.bgbox > #define_colors {
+  width: 100%;
+  margin: 0;
 }
 
 .pimgbox,
@@ -7634,6 +7373,26 @@ button#go-up:hover #percent {
     height: 205px;
   }
 
+  /* 图墙在手机端：列更窄、间距更小，缩略图按比例缩放（其余沿用上面的 grid 规则） */
+  .bgbox {
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 10px;
+  }
+  .bgbox > .imgbox,
+  .bgbox > .box {
+    height: auto;
+    aspect-ratio: 135 / 73;
+  }
+  .bgbox > .pimgbox {
+    height: 205px;
+  }
+
+  /* 自定义颜色框在手机端也跟纯色块一样按 135/73 比例 */
+  .bgbox > #define_colors {
+    height: auto;
+    aspect-ratio: 135 / 73;
+  }
+
   /* 2.0新增内容 */
   .wb-min {
     display: none;
@@ -7648,69 +7407,24 @@ button#go-up:hover #percent {
   background: #2b2929;
 }
 
-/* 侧边栏个人信息卡片动态渐变色 */
-/* #aside-content > .card-widget.card-info {
-  background: linear-gradient(
-    -45deg,
-    #e8d8b9,
-    #eccec5,
-    #a3e9eb,
-    #bdbdf0,
-    #eec1ea
-  );
-  box-shadow: 0 0 5px rgb(66, 68, 68);
-  position: relative;
-  background-size: 400% 400%;
-  -webkit-animation: Gradient 10s ease infinite;
-  -moz-animation: Gradient 10s ease infinite;
-  animation: Gradient 10s ease infinite !important;
-}
-@-webkit-keyframes Gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-@-moz-keyframes Gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-@keyframes Gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-} */
+/* ─── 已清理（2026-10-03 屎山重构 P3）──────────────────────────────
+   删除：侧栏个人信息卡片「动态渐变」整段（50 行，含 3 个 @keyframes Gradient 定义，全都写在注释里）
+   原因：早就不用这套渐变，改成了下面的 springBg.png / aurora.webp 背景图；注释里的 keyframes 永远不会生效，却容易让人以为 Gradient 定义在这里
+   恢复：bak/2026-10-03-屎山重构/before/themes/fomalhaut/source/css/_custom/custom.css
+   ─────────────────────────────────────────────────────────── */
 
 /* 个人信息卡片背景图 */
 [data-theme="light"] #aside-content > .card-widget.card-info {
-  background-image: url(https://picbed.skylerplus.top/static/head_bg.png);
+  background-image: url(/assets/fomal/home-bg.webp);
   background-repeat: no-repeat;
   background-attachment: inherit;
-  background-size: 220%;
+  background-size: 100%;
 }
 [data-theme="dark"] #aside-content > .card-widget.card-info {
-  background-image: url(https://picbed.skylerplus.top/static/head_bg.png);
+  background-image: url(/assets/fomal/home-bg.webp);
   background-repeat: no-repeat;
   background-attachment: inherit;
-  background-size: 220%;
+  background-size: 100%;
 }
 /* 头像呼吸灯 */
 [data-theme="light"] .avatar-img {
@@ -7749,12 +7463,298 @@ button#go-up:hover #percent {
   color: white;
 }
 #aside-content > .card-widget.card-info > #card-info-btn:hover {
-  background-color: var(--text-bg-hover) !important;
+  background-color: var(--btn-hover-color) !important;
+  transition: all 0.2s ease-in-out;
 }
 
-/* Aplayer字体 */
+/* ===== APlayer 美化：圆角 / 主题浅色底 / 主题色滚动条 / 收窄（八音盒音乐空间） ===== */
 #article-container .aplayer {
+  --aplayer-bg: color-mix(in srgb, var(--theme-color) 7%, #fff);
   font-family: var(--global-font) !important;
+  max-width: 720px;
+  margin: 0 auto 26px !important;
+  border-radius: 16px;
+  background: var(--aplayer-bg);
+  border: 1px solid color-mix(in srgb, var(--theme-color) 18%, transparent);
+  box-shadow: 0 8px 24px -14px color-mix(in srgb, var(--theme-color) 70%, transparent);
+}
+/* 封面与播放按钮 */
+#article-container .aplayer .aplayer-pic {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px -3px color-mix(in srgb, var(--theme-color) 65%, transparent);
+}
+#article-container .aplayer .aplayer-pic .aplayer-button {
+  background: color-mix(in srgb, var(--theme-color) 88%, #fff);
+  box-shadow: 0 2px 8px color-mix(in srgb, var(--theme-color) 50%, transparent);
+}
+#article-container .aplayer .aplayer-pic .aplayer-button path {
+  fill: #fff;
+}
+/* 标题与作者 */
+#article-container .aplayer .aplayer-info .aplayer-music .aplayer-title {
+  font-weight: 600;
+}
+#article-container .aplayer .aplayer-info .aplayer-music .aplayer-author {
+  color: color-mix(in srgb, var(--theme-color) 55%, #666);
+}
+/* 进度条与滑块 */
+#article-container .aplayer .aplayer-bar {
+  height: 4px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--theme-color) 18%, #fff);
+}
+#article-container .aplayer .aplayer-loaded {
+  height: 4px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--theme-color) 35%, #fff);
+}
+#article-container .aplayer .aplayer-played {
+  height: 4px !important;
+  border-radius: 999px;
+  background: var(--theme-color) !important;
+}
+#article-container .aplayer .aplayer-thumb {
+  width: 11px;
+  height: 11px;
+  margin-top: -4px;
+  background: var(--theme-color) !important;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--theme-color) 45%, transparent);
+}
+/* 时间与图标 */
+#article-container .aplayer .aplayer-time {
+  color: color-mix(in srgb, var(--theme-color) 50%, #888);
+}
+#article-container .aplayer .aplayer-time .aplayer-icon path {
+  fill: color-mix(in srgb, var(--theme-color) 65%, #666);
+}
+#article-container .aplayer .aplayer-time .aplayer-icon:hover path {
+  fill: var(--theme-color);
+}
+/* 音量条 */
+#article-container .aplayer .aplayer-volume-bar {
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--theme-color) 18%, #fff);
+}
+#article-container .aplayer .aplayer-volume {
+  border-radius: 999px;
+  background: var(--theme-color);
+}
+/* 顶部与列表之间的分隔线 */
+#article-container .aplayer.aplayer-withlist .aplayer-info {
+  border-bottom: 1px solid color-mix(in srgb, var(--theme-color) 15%, transparent);
+}
+/* 歌词遮罩：APlayer 默认用白色渐变（:before/:after），底色不再是白色后会露出两条白条，改成同底色 */
+#article-container .aplayer .aplayer-lrc:before {
+  background: linear-gradient(180deg, var(--aplayer-bg) 0, transparent);
+}
+#article-container .aplayer .aplayer-lrc:after {
+  background: linear-gradient(180deg, transparent 0, var(--aplayer-bg));
+}
+#article-container .aplayer .aplayer-lrc p {
+  color: color-mix(in srgb, var(--theme-color) 35%, #777);
+}
+/* 播放列表：圆角药丸行 + 很浅的主题色 */
+#article-container .aplayer .aplayer-list {
+  padding: 4px 8px 8px;
+}
+#article-container .aplayer .aplayer-list ol {
+  max-height: 340px;
+  border-radius: 12px;
+}
+#article-container .aplayer .aplayer-list ol li {
+  height: 32px;
+  line-height: 32px;
+  margin: 1px 0;
+  padding: 0 12px;
+  border-top: none;
+  border-radius: 10px;
+  color: #4a4a4a;
+  transition: all 0.2s ease;
+}
+#article-container .aplayer .aplayer-list ol li:hover {
+  background: color-mix(in srgb, var(--theme-color) 12%, #fff);
+}
+#article-container .aplayer .aplayer-list ol li.aplayer-list-light {
+  background: color-mix(in srgb, var(--theme-color) 18%, #fff);
+  color: color-mix(in srgb, var(--theme-color) 45%, #24413f);
+  font-weight: 600;
+}
+#article-container .aplayer .aplayer-list ol li .aplayer-list-cur {
+  width: 4px;
+  height: 18px;
+  top: 7px;
+  border-radius: 999px;
+}
+#article-container .aplayer .aplayer-list ol li .aplayer-list-index {
+  color: color-mix(in srgb, var(--theme-color) 40%, #999);
+}
+#article-container .aplayer .aplayer-list ol li .aplayer-list-author {
+  color: #999;
+}
+/* 播放列表滚动条：主题色系 */
+#article-container .aplayer .aplayer-list::-webkit-scrollbar,
+#article-container .aplayer .aplayer-list ol::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+#article-container .aplayer .aplayer-list::-webkit-scrollbar-track,
+#article-container .aplayer .aplayer-list ol::-webkit-scrollbar-track {
+  background: color-mix(in srgb, var(--theme-color) 10%, transparent);
+  border-radius: 999px;
+}
+#article-container .aplayer .aplayer-list::-webkit-scrollbar-thumb,
+#article-container .aplayer .aplayer-list ol::-webkit-scrollbar-thumb {
+  background-color: color-mix(in srgb, var(--theme-color) 55%, #fff);
+  background-image: none;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  border-radius: 999px;
+}
+#article-container .aplayer .aplayer-list::-webkit-scrollbar-thumb:hover,
+#article-container .aplayer .aplayer-list ol::-webkit-scrollbar-thumb:hover {
+  background-color: var(--theme-color);
+}
+/* Firefox 回退：标准属性必须放在 @supports not 里，否则会禁用全局 webkit 滚动条样式 */
+@supports not selector(::-webkit-scrollbar) {
+  #article-container .aplayer .aplayer-list,
+  #article-container .aplayer .aplayer-list ol {
+    scrollbar-width: thin;
+    scrollbar-color: color-mix(in srgb, var(--theme-color) 55%, #fff) color-mix(in srgb, var(--theme-color) 10%, transparent);
+  }
+}
+/* 夜间模式 */
+[data-theme="dark"] #article-container .aplayer {
+  --aplayer-bg: color-mix(in srgb, var(--theme-color) 14%, #1c1c1c);
+  filter: none;
+  color: #e6e6e6;
+  background: var(--aplayer-bg);
+  border-color: color-mix(in srgb, var(--theme-color) 28%, transparent);
+  box-shadow: 0 8px 24px -16px #000;
+}
+[data-theme="dark"] #article-container .aplayer .aplayer-info .aplayer-music .aplayer-author {
+  color: color-mix(in srgb, var(--theme-color) 40%, #bbb);
+}
+[data-theme="dark"] #article-container .aplayer .aplayer-bar {
+  background: color-mix(in srgb, var(--theme-color) 25%, #242424);
+}
+[data-theme="dark"] #article-container .aplayer .aplayer-loaded {
+  background: color-mix(in srgb, var(--theme-color) 45%, #242424);
+}
+[data-theme="dark"] #article-container .aplayer .aplayer-lrc p {
+  color: color-mix(in srgb, var(--theme-color) 30%, #9a9a9a);
+}
+[data-theme="dark"] #article-container .aplayer .aplayer-time {
+  color: color-mix(in srgb, var(--theme-color) 45%, #aaa);
+}
+[data-theme="dark"] #article-container .aplayer .aplayer-time .aplayer-icon path {
+  fill: color-mix(in srgb, var(--theme-color) 55%, #ccc);
+}
+[data-theme="dark"] #article-container .aplayer .aplayer-list ol li {
+  color: #cfcfcf;
+}
+[data-theme="dark"] #article-container .aplayer .aplayer-list ol li:hover {
+  background: color-mix(in srgb, var(--theme-color) 22%, #1c1c1c);
+}
+[data-theme="dark"] #article-container .aplayer .aplayer-list ol li.aplayer-list-light {
+  background: color-mix(in srgb, var(--theme-color) 30%, #1c1c1c);
+  color: #fff;
+}
+[data-theme="dark"] #article-container .aplayer .aplayer-list ol li .aplayer-list-author {
+  color: #9a9a9a;
+}
+
+/* ===== 音乐页：歌单来源 / 简介 / 热评 ===== */
+#article-container .music-note {
+  max-width: 720px;
+  margin: -8px auto 26px;
+  padding: 14px 18px 16px;
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--theme-color) 6%, #fff);
+  border: 1px solid color-mix(in srgb, var(--theme-color) 16%, transparent);
+  font-size: 14px;
+  line-height: 1.9;
+  color: #4a4a4a;
+}
+#article-container .music-note-head {
+  font-size: 13px;
+  line-height: 1.8;
+  color: color-mix(in srgb, var(--theme-color) 50%, #777);
+}
+#article-container .music-note-tag {
+  display: inline-block;
+  margin-right: 8px;
+  padding: 0 9px;
+  border-radius: 999px;
+  font-size: 12px;
+  line-height: 20px;
+  color: #fff;
+  background: var(--theme-color);
+}
+#article-container .music-note-id {
+  display: inline-block;
+  margin-left: 4px;
+  padding: 0 9px;
+  border-radius: 999px;
+  font-size: 12px;
+  line-height: 20px;
+  color: var(--theme-color);
+  background: color-mix(in srgb, var(--theme-color) 12%, transparent);
+  text-decoration: none;
+  transition: background .2s;
+}
+#article-container .music-note-id:hover {
+  color: var(--theme-color);
+  background: color-mix(in srgb, var(--theme-color) 24%, transparent);
+}
+#article-container .music-note-desc {
+  margin: 10px 0 12px;
+}
+#article-container .music-note-quote {
+  margin: 0;
+  padding: 10px 14px;
+  border-radius: 0 12px 12px 0;
+  background: color-mix(in srgb, var(--theme-color) 8%, transparent);
+  font-size: 13.5px;
+  line-height: 1.85;
+  color: #555;
+}
+#article-container .music-note-quote cite {
+  display: block;
+  margin-top: 8px;
+  font-size: 12px;
+  font-style: normal;
+  color: color-mix(in srgb, var(--theme-color) 45%, #999);
+}
+#article-container .music-note-sub {
+  margin: 0 0 10px;
+  font-size: 12px;
+  letter-spacing: .5px;
+  color: color-mix(in srgb, var(--theme-color) 60%, #8a8a8a);
+}
+#article-container .music-note-quotes {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+[data-theme="dark"] #article-container .music-note-sub {
+  color: color-mix(in srgb, var(--theme-color) 45%, #999);
+}
+[data-theme="dark"] #article-container .music-note {
+  background: color-mix(in srgb, var(--theme-color) 12%, #1c1c1c);
+  border-color: color-mix(in srgb, var(--theme-color) 22%, transparent);
+  color: #cfcfcf;
+}
+[data-theme="dark"] #article-container .music-note-head {
+  color: color-mix(in srgb, var(--theme-color) 40%, #aaa);
+}
+[data-theme="dark"] #article-container .music-note-quote {
+  background: color-mix(in srgb, var(--theme-color) 14%, #1c1c1c);
+  color: #c8c8c8;
+}
+[data-theme="dark"] #article-container .music-note-quote cite {
+  color: color-mix(in srgb, var(--theme-color) 35%, #999);
 }
 
 /* 背景图片链接输入框placeholder*/
@@ -7771,9 +7771,35 @@ input#pic-link {
   outline: 1px solid var(--theme-color) !important;
 }
 
+/* 滤镜按钮 */
+input#blurRad::-webkit-input-placeholder,
+input#saturation::-webkit-input-placeholder,
+input#contrast::-webkit-input-placeholder {
+  color: rgb(180, 180, 180);
+}
+
+input#blurRad,
+input#saturation,
+input#contrast {
+  border-radius: 6px;
+  border: 0.6px solid #80808080 !important;
+  outline: 0.6px solid #80808080 !important;
+  line-height: 1.2;
+  height: 26px;
+  margin-top: 3px;
+  max-width: 50px;
+}
+
+input#blurRad:hover,
+input#saturation:hover,
+input#contrast:hover {
+  border: 0.6px solid var(--theme-color) !important;
+  outline: 0.6px solid var(--theme-color) !important;
+}
+
 /* heo 加载动画头像 */
 .loading-img {
-  background: url(https://tuchuang.voooe.cn/images/2023/01/02/avatar.webp)
+  background: url(/assets/avatar.webp)
     no-repeat center center;
   background-size: cover;
 }
@@ -7784,24 +7810,37 @@ input#pic-link {
 }
 
 /* 顶栏常驻 */
-.nav-fixed #nav {
+#page-header.nav-fixed #nav,
+#page-header.nav-visible #nav {
   transform: translateY(58px) !important;
   -webkit-transform: translateY(58px) !important;
-  -moz-transform: translateY(58px) !important;
-  -ms-transform: translateY(58px) !important;
-  -o-transform: translateY(58px) !important;
+  background: linear-gradient(60deg, #ffd7e4 0, #c8f1ff 93%);
+  opacity: 0.95;
 }
+#page-header.nav-visible > .nav_visible {
+  display: var(--nav-visible-display) !important;
+}
+#page-header.nav-fixed > .nav_fixed {
+  display: var(--nav-fixed-display) !important;
+}
+#page-header.nav-fixed #nav {
+  display: var(--nav-fixed-display);
+}
+#page-header.nav-visible #nav {
+  display: var(--nav-visible-display);
+}
+
 #nav {
   transition: none !important;
   -webkit-transition: none !important;
-  -moz-transition: none !important;
-  -ms-transition: none !important;
-  -o-transition: none !important;
+}
+#page-header.nav-fixed #nav a:hover {
+  color: inherit !important;
 }
 
-@media screen and (mai-width: 768px) {
+@media screen and (min-width: 600px) {
   #nav {
-    padding: 0 28px;
+    padding: 0 28px !important;
   }
 }
 
@@ -7819,9 +7858,6 @@ input#pic-link {
   background-color: var(--theme-color) !important;
   transition: all 0.3s;
   -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -ms-transition: all 0.3s;
-  -o-transition: all 0.3s;
   opacity: 0;
   box-shadow: 0 0 3px var(--theme-color) !important;
   line-height: 45px; /*如果垂直位置不居中可以微调此值，也可以删了*/
@@ -7832,12 +7868,14 @@ input#pic-link {
 #name-container {
   transition: all 0.3s;
   -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -ms-transition: all 0.3s;
-  -o-transition: all 0.3s;
 }
-#name-container:hover {
-  scale: 1.03;
+/* 悬停放大必须并进同一个 transform：
+   独立的 scale 属性和 transform: translateX(-50%) 一起用时，按 CSS Transforms 2 的合成顺序
+   scale 作用在已经位移过的坐标上，会把 -50% 的居中位移也放大 1.03 倍 →
+   整块标题左偏 0.5×宽度×0.03 ≈ 6.3px（悬停时才看得见，所以一直没发现）。
+   写成 translateX(-50%) scale(1.03) 时 translate 在最后一步，位移不再被放大，居中才是准的。 */
+center#name-container:hover {
+  transform: translateX(-50%) scale(1.03) !important;
 }
 #page-name {
   position: relative;
@@ -7845,7 +7883,8 @@ input#pic-link {
 }
 
 /* 调节字体显示栏目 */
-#swfs {
+#swfs,
+#swfs_code {
   display: flex;
   flex-wrap: wrap;
 }
@@ -7885,11 +7924,17 @@ input[name="colors"] {
 #green {
   border: 3px solid var(--color-green);
 }
+#puregreen {
+  border: 3px solid var(--color-puregreen);
+}
 #blue {
   border: 3px solid var(--color-blue);
 }
 #purple {
   border: 3px solid var(--color-purple);
+}
+#purepurple {
+  border: 3px solid var(--color-purepurple);
 }
 #pink {
   border: 3px solid var(--color-pink);
@@ -7903,14 +7948,20 @@ input[name="colors"] {
 #black {
   border: 3px solid var(--color-black);
 }
-#blackgray {
-  border: 3px solid var(--color-blackgray);
+#gray {
+  border: 3px solid var(--color-gray);
 }
 #purple:checked {
   box-shadow: 0 0 0 2px #fff inset;
   border-radius: 50%;
   border: 3px solid var(--color-purple);
   background-color: var(--color-purple);
+}
+#purepurple:checked {
+  box-shadow: 0 0 0 2px #fff inset;
+  border-radius: 50%;
+  border: 3px solid var(--color-purepurple);
+  background-color: var(--color-purepurple);
 }
 #red:checked {
   box-shadow: 0 0 0 2px #fff inset;
@@ -7935,6 +7986,12 @@ input[name="colors"] {
   border-radius: 50%;
   border: 3px solid var(--color-green);
   background-color: var(--color-green);
+}
+#puregreen:checked {
+  box-shadow: 0 0 0 2px #fff inset;
+  border-radius: 50%;
+  border: 3px solid var(--color-puregreen);
+  background-color: var(--color-puregreen);
 }
 #blue:checked {
   box-shadow: 0 0 0 2px #fff inset;
@@ -7966,11 +8023,11 @@ input[name="colors"] {
   border: 3px solid var(--color-black);
   background-color: var(--color-black);
 }
-#blackgray:checked {
+#gray:checked {
   box-shadow: 0 0 0 2px #fff inset;
   border-radius: 50%;
-  border: 3px solid var(--color-blackgray);
-  background-color: var(--color-blackgray);
+  border: 3px solid var(--color-gray);
+  background-color: var(--color-gray);
 }
 
 /* 主题色适配覆盖区域 */
@@ -7996,9 +8053,11 @@ blockquote {
 .article-sort-title:before {
   border: 5px solid var(--theme-color) !important;
 }
-.article-sort-item:before {
-  order: 3px solid var(--theme-color) !important;
-}
+/* ─── 已清理（2026-10-03 屎山重构 P3）──────────────────────────────
+   删除：.article-sort-item:before { order: 3px solid var(--theme-color) !important; }
+   原因：order 是 border 的笔误，浏览器把整条声明当无效丢弃；真正生效的规则是下面 .article-sort-item:before 的 border: 3px solid ...
+   恢复：bak/2026-10-03-屎山重构/before/themes/fomalhaut/source/css/_custom/custom.css
+   ─────────────────────────────────────────────────────────── */
 .article-sort-item.year:hover:before {
   border-color: var(--theme-color) !important;
 }
@@ -8059,6 +8118,9 @@ blockquote {
 }
 #pagination .page-number.current {
   background: var(--theme-color) !important;
+}
+#aside-content .aside-list > .aside-list-item .content > .title:hover {
+  color: var(--theme-color) !important;
 }
 #article-container h1:hover:before,
 #article-container h2:hover:before,
@@ -8146,6 +8208,9 @@ a:hover {
 .settings input[type="checkbox"] {
   width: 37px;
   height: 20px;
+  /* 开关是 flex 子项：禁止被压缩，否则手机窄屏下开关会被压扁、白色圆点会溢出胶囊 */
+  flex: 0 0 auto;
+  min-width: 37px;
   position: relative;
   border: 1px solid #000000;
   background-color: #fdfdfd;
@@ -8155,7 +8220,9 @@ a:hover {
   -webkit-appearance: none;
   user-select: none;
   outline: none;
-  transform: translateY(5px);
+  /* 开关的垂直位置由外面的 .opt（display:flex; align-items:center）居中决定。
+     这里原来有一句 transform: translateY(5px) —— 那是给更早的「文字与开关同行、
+     按基线对齐」补的偏移；套上 flex 居中之后它会把开关整体压到文字中线下方 5px，故删除。 */
 }
 .settings input[type="checkbox"]:before {
   content: "";
@@ -8201,6 +8268,29 @@ a:hover {
   margin-right: 5px;
 }
 
+/* 设置面板里的每一行：空间不够时换行，而不是把行内的控件压扁。
+   手机端开关变形、保存按钮被压成竖条、数字输入框变窄、颜色单选挤爆面板都是这一个原因 */
+.settings .content {
+  flex-wrap: wrap;
+}
+.settings .content > .content-text {
+  flex: 0 0 auto;
+}
+.settings .content input[type="checkbox"],
+.settings .content input[type="radio"],
+.settings .content input[type="number"] {
+  flex: 0 0 auto;
+}
+.settings .content > button {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+/* 数字输入框固定宽度：不固定时宽度会随可用空间在 39px~50px 之间抖动 */
+.settings .content input[type="number"] {
+  width: 50px;
+}
+
 /* 手机侧边菜单栏 */
 #sidebar #sidebar-menus {
   background: linear-gradient(60deg, #ffd7e4 0, #c8f1ff 93%);
@@ -8220,14 +8310,12 @@ a:hover {
   z-index: 1919810;
 }
 [data-theme="light"] #fps {
-  background-color: rgba(255, 255, 255, 0.85);
-  backdrop-filter: var(--backdrop-filter);
+  background-color: rgba(252, 252, 252, 0.92);
   padding: 4px;
   border-radius: 4px;
 }
 [data-theme="dark"] #fps {
-  background-color: rgba(0, 0, 0, 0.72);
-  backdrop-filter: var(--backdrop-filter);
+  background-color: rgba(10, 10, 10, 0.85);
   padding: 4px;
   border-radius: 4px;
 }
@@ -8266,15 +8354,27 @@ input[type="range"]::-webkit-slider-thumb {
 .range {
   position: relative;
   width: 300px;
+  /* 窄屏（手机）时自动收窄，避免固定 300px 把面板撑出横向滚动 */
+  max-width: calc(100% - 10px);
   margin: 20px 0px 32px 10px;
+  /* 上下各留 9px 空白，把滑条的可点击区域从 5px 扩大到 23px（视觉高度不变） */
+  padding: 9px 0;
+  cursor: pointer;
+  /* 触屏：纵向仍可滚动页面，横向拖动交给滑条 */
+  touch-action: pan-y;
+  -webkit-user-select: none;
+  user-select: none;
 }
 .rang_width {
   position: absolute;
-  top: 0px;
+  /* 与 .range 的 padding-top 对齐，正好压在轨道上 */
+  top: 9px;
   left: 0px;
   background: var(--theme-color) !important;
   height: 5px;
   border-radius: 2px 0 0 2px;
+  /* 关键：进度条不再拦截鼠标事件，轨道任意位置都能点到 input */
+  pointer-events: none;
 }
 
 /* 翻页按钮居中 */
@@ -8311,35 +8411,58 @@ li.categoryBar-list-item {
     height: 260px !important;
   }
   .blog-slider__img {
-    width: 240px !important;
+    width: 36% !important;
     height: 100% !important;
   }
 }
 
-/* 自定义颜色框 */
+/* 自定义颜色框：与纯色块同尺寸同形状，用彩虹渐变代表“自定义颜色”，保留文字 */
+#define_colors {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 10px !important;
+  overflow: hidden;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  background: conic-gradient(
+    from 90deg,
+    #ff8a8a, #ffcf7a, #f6f37a, #9ee88f, #7fdfd0,
+    #8ec9ff, #b79cff, #ff9ad5, #ff8a8a
+  ) !important;
+}
+#define_colors::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+#define_colors::-webkit-color-swatch {
+  border: none;
+  opacity: 0;
+}
+#define_colors::-moz-color-swatch {
+  border: none;
+  opacity: 0;
+}
 #define_colors::before {
   position: absolute;
-  color: rgb(255, 255, 255);
-  left: 45px;
-  top: 44px;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
+  pointer-events: none;
   content: "自定义颜色";
-}
-#define_colors {
-  border: none;
-  background: 0 0;
-  width: 166px;
-  height: 110px;
-  margin: 5px 10px;
-  position: relative;
-  padding: 0;
 }
 
 /* 顶部胶囊加载条 */
 .pace {
-  -webkit-pointer-events: none;
   pointer-events: none;
   -webkit-user-select: none;
-  -moz-user-select: none;
   user-select: none;
   z-index: 2000;
   position: fixed;
@@ -8362,14 +8485,8 @@ li.categoryBar-list-item {
 
 .pace .pace-progress {
   -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-  -o-box-sizing: border-box;
   box-sizing: border-box;
   -webkit-transform: translate3d(0, 0, 0);
-  -moz-transform: translate3d(0, 0, 0);
-  -ms-transform: translate3d(0, 0, 0);
-  -o-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
   max-width: 200px;
   position: absolute;
@@ -8465,26 +8582,7 @@ li.categoryBar-list-item {
   color: red;
   animation: iconAnimate 1s ease-in-out infinite;
 }
-@-moz-keyframes iconAnimate {
-  0%,
-  100% {
-    transform: scale(1);
-  }
-  10%,
-  30% {
-    transform: scale(0.9);
-  }
-  20%,
-  40%,
-  60%,
-  80% {
-    transform: scale(1.1);
-  }
-  50%,
-  70% {
-    transform: scale(1.1);
-  }
-}
+/* [P3 清理] 此处原有 @-moz-keyframes iconAnimate（20 行）：Firefox 16+ / Opera 15+ 起已支持无前缀 @keyframes，删掉前缀版，无前缀版就在附近 */
 @-webkit-keyframes iconAnimate {
   0%,
   100% {
@@ -8505,26 +8603,7 @@ li.categoryBar-list-item {
     transform: scale(1.1);
   }
 }
-@-o-keyframes iconAnimate {
-  0%,
-  100% {
-    transform: scale(1);
-  }
-  10%,
-  30% {
-    transform: scale(0.9);
-  }
-  20%,
-  40%,
-  60%,
-  80% {
-    transform: scale(1.1);
-  }
-  50%,
-  70% {
-    transform: scale(1.1);
-  }
-}
+/* [P3 清理] 此处原有 @-o-keyframes iconAnimate（20 行）：Firefox 16+ / Opera 15+ 起已支持无前缀 @keyframes，删掉前缀版，无前缀版就在附近 */
 @keyframes iconAnimate {
   0%,
   100% {
@@ -8606,6 +8685,7 @@ li.categoryBar-list-item {
 .neko {
   width: 64px;
   height: 64px;
+  /* https://bu.dusays.com/2022/07/20/62d812db74be9.png */
   position: absolute;
   right: 56px !important;
   background-repeat: no-repeat;
@@ -8614,15 +8694,18 @@ li.categoryBar-list-item {
   font-family: var(--global-font);
   font-weight: 600;
   font-size: 16px;
-  color: var(--theme-color) !important;
+  /* 报时文字写死成舒适的黑 #333，不跟随主题色（主题色在这个白色气泡上观感偏怪） */
+  color: #333 !important;
   display: none;
+  /* 猫咪只当「视觉挂件」：不吃鼠标事件，被它压住的导航图标 / 侧边按钮 / 链接照常能点、能悬停 */
+  pointer-events: none;
 }
 
 .neko::after {
   display: none;
   width: 100px;
   height: 100px;
-  background-image: url("https://bu.dusays.com/2022/07/20/62d812d95e6f5.png");
+  background-image: none;
   background-size: contain;
   z-index: 9999;
   position: absolute;
@@ -8639,7 +8722,8 @@ li.categoryBar-list-item {
   text-overflow: ellipsis;
 }
 
-.neko:hover::after {
+/* 猫咪是 pointer-events:none，:hover 永远不触发；改由 JS 判定指针是否落在猫咪身上，命中就加 .hoverOn */
+.neko.hoverOn::after {
   content: attr(data-msg);
   display: block;
   overflow: hidden;
@@ -8679,18 +8763,11 @@ li.categoryBar-list-item {
     margin: 1%;
   }
 }
-
-@keyframes Gradient {
-  0% {
-    background-position: 0 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  to {
-    background-position: 0 50%;
-  }
-}
+/* ─── 已清理（2026-10-03 屎山重构 P3）──────────────────────────────
+   删除：@keyframes Gradient（11 行）
+   原因：全站没有任何 animation 引用它（搜 "animation: Gradient" 无结果），是动态渐变被停用后留下的孤儿
+   恢复：bak/2026-10-03-屎山重构/before/themes/fomalhaut/source/css/_custom/custom.css
+   ─────────────────────────────────────────────────────────── */
 
 /* By Fomalhaut版权大小 */
 .copyright {
@@ -8716,6 +8793,9 @@ span.card-clock-weather {
 #meihua-button,
 #nightmode-button {
   padding-left: 12px;
+}
+#nav #toggle-menu {
+  padding: 2px 0 0 12px !important;
 }
 
 /* 搜索框样式 */
@@ -8745,7 +8825,7 @@ span.card-clock-weather {
   }
 }
 [data-theme="dark"] .magnet_link_context {
-  background: #1e1e1e;
+  background: #232323;
   color: antiquewhite;
 }
 [data-theme="dark"] .magnet_link_context {
@@ -8769,7 +8849,7 @@ span.card-clock-weather {
   border-radius: 20px;
   padding: 12px;
   margin: 5px;
-  border: 2px solid #a0a0a0;
+  border: 1px solid #c4c2c2;
 }
 [data-theme="dark"] .about_page {
   background: #252525;
@@ -8780,12 +8860,13 @@ span.card-clock-weather {
 }
 /* 欢迎信息 */
 #welcome-info {
-  background: linear-gradient(45deg, #b9f4f3, #e3fbf9);
+  background-color: var(--hh-trans-color);
+  /* background: linear-gradient(45deg, #d9f5ea, #d8f3f0); */
   border-radius: 18px;
   padding: 8px 8px;
 }
 [data-theme="dark"] #welcome-info {
-  background: #212121;
+  background: #252525;
 }
 
 /* 霓虹灯颜色渐变 */
@@ -8861,7 +8942,8 @@ span.card-clock-weather {
 }
 
 .btn-xz-box:hover .btn-xz {
-  background-color: var(--text-bg-hover) !important;
+  background-color: var(--btn-hover-color) !important;
+  transition: all 0.2s ease-in-out;
 }
 
 .t-top .t-t-r {
@@ -8986,6 +9068,13 @@ i.fas.fa-cog.right_side {
 /* 文章封面箭头动画 */
 .recent-post-arrow {
   animation: ddd 3s linear infinite;
+}
+
+/* 箭头圆角：主题 multicard.styl 里的 .recent-post-arrow 是直角 clip-path，
+   这里用同链选择器（特异性相同、且在 custom.css 中更靠后）覆盖成圆角三角形；
+   元素尺寸固定 20×10px，圆角半径约 2px，曲线按 4 段采样成多边形 */
+.recent-posts .recent-post-item .recent-post-content .recent-post-arrow {
+  -webkit-clip-path: polygon(4.8px 0px, 15.2px 0px, 16.27px 0.05px, 17.09px 0.21px, 17.65px 0.48px, 17.95px 0.85px, 18px 1.33px, 17.79px 1.91px, 17.32px 2.6px, 16.6px 3.4px, 11.4px 8.6px, 11.05px 8.91px, 10.7px 9.12px, 10.35px 9.26px, 10px 9.3px, 9.65px 9.26px, 9.3px 9.13px, 8.95px 8.91px, 8.6px 8.6px, 3.4px 3.4px, 2.68px 2.6px, 2.21px 1.91px, 2px 1.33px, 2.05px 0.85px, 2.35px 0.48px, 2.91px 0.21px, 3.73px 0.05px, 4.8px 0px);
 }
 
 @keyframes ddd {
@@ -9208,7 +9297,7 @@ figure.highlight pre .deletion {
   padding: 1rem;
   position: relative;
   border-radius: 12px;
-  background-image: url(https://tuchuang.voooe.cn/images/2023/01/02/tunian.webp);
+  background-image: none;
   background-size: cover;
   background-position: center;
 }
@@ -9269,7 +9358,7 @@ figure.highlight pre .deletion {
 
 /* 信息卡片彩带 */
 /* .author_top:hover {
-  background: url(https://tuchuang.voooe.cn/images/2023/01/02/snow.gif);
+  background: none;
   background-size: cover;
 } */
 
@@ -9466,11 +9555,11 @@ hr:before {
 }
 #EEEDogBox::before {
   left: 20px;
-  content: "EEEDog动漫壁纸";
+  content: "loliapi动漫壁纸";
 }
 #seovxBox::before {
   left: 30px;
-  content: "seovx美女壁纸";
+  content: "jitsu萌图壁纸";
 }
 #picsumBox::before {
   left: 24px;
@@ -9514,6 +9603,538 @@ hr:before {
   scale: 1.05;
   transition: all 0.3s ease-in-out;
 }
+
+/* 最新文章图片圆角 */
+#aside-content .aside-list > .aside-list-item .thumbnail {
+  border-radius: 8px !important;
+}
+
+/* 转圈颜色 */
+.el-loading-spinner .path {
+  stroke: var(--theme-color) !important;
+}
+
+.mini-link:hover {
+  scale: 1.05;
+}
+
+.winbox_btn:hover {
+  background-color: var(--btn-hover-color) !important;
+  transition: all 0.2s ease-in-out;
+}
+
+#reset_btn:hover {
+  background: var(--btn-hover-color) !important;
+  transition: all 0.5s ease-in-out;
+}
+
+/* 侧栏显隐 */
+.layout:not(:has(#page)) {
+  justify-content: var(--layout-justify-content);
+}
+
+.layout:not(:has(#page)) > .aside-content {
+  display: var(--aside-content-display);
+}
+
+/* 侧栏位置 */
+.layout > div:first-child {
+  order: var(--first-child-order);
+}
+
+@media screen and (min-width: 1069px) {
+  .recent-posts .recent-post-item {
+    /* 右边：0px 1% 20px 0px 左边则反过来*/
+    margin: var(--recent-post-item-margin);
+  }
+}
+
+/* ─── 已清理（2026-10-03 屎山重构 P3）──────────────────────────────
+   删除：TianliGPT 整段样式（189 行：:root --heo-* 变量 + .post-TianliGPT 及配套类）
+   原因：该功能已下线（source/site/time/index.md 更新日志记着「去除 TianliGPT」），配置与模板里都搜不到 tianliGPT；这段 --heo-* 变量还会误导人以为是主题变量
+   恢复：bak/2026-10-03-屎山重构/before/themes/fomalhaut/source/css/_custom/custom.css
+   ─────────────────────────────────────────────────────────── */
+
+
+/* ==========================================================================
+   置顶文章角标（首页卡片左上角）
+   --------------------------------------------------------------------------
+   配合 themes/fomalhaut/layout/includes/mixins/post-ui.pug 里的
+   postStickyBadge 混入使用。字段：文章 Front-Matter 或正文标记
+   <!-- sticky --> 都会写入 sticky = 1；sticky: 2 及以上为「强置顶」，颜色更红。
+   .recent-post-item 本身是 overflow: hidden，所以角标只能贴在卡片内部
+   左上角（做成越界的缎带会被直接裁掉）。
+   ========================================================================== */
+.recent-post-item .post-sticky-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 26px;
+  padding: 0 11px 0 9px;
+  border-radius: 999px;
+  background-image: linear-gradient(135deg, #ff9a3d 0%, #ff5f4d 52%, #f5341d 100%);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 1px;
+  white-space: nowrap;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(231, 63, 32, 0.45), inset 0 0 0 1px rgba(255, 255, 255, 0.28);
+  pointer-events: none;
+  transform: translateZ(0);
+}
+
+/* 强置顶（sticky >= 2）：整体加深，和普通置顶拉开差距 */
+.recent-post-item .post-sticky-badge.is-top {
+  background-image: linear-gradient(135deg, #ff7a2f 0%, #f0351c 45%, #c8120b 100%);
+  box-shadow: 0 4px 14px rgba(196, 22, 10, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.28);
+}
+
+.recent-post-item .post-sticky-badge .post-sticky-icon {
+  width: 13px;
+  height: 13px;
+  flex-shrink: 0;
+  fill: #fff;
+}
+
+.recent-post-item .post-sticky-badge .post-sticky-text {
+  position: relative;
+  z-index: 1;
+}
+
+/* 划过卡片的斜向高光：置顶角标看起来是「会动」的，比较容易第一眼看到 */
+.recent-post-item .post-sticky-badge .post-sticky-shine {
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 45%;
+  height: 100%;
+  background: linear-gradient(100deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.72) 50%, rgba(255, 255, 255, 0) 100%);
+  transform: skewX(-18deg);
+  animation: post-sticky-shine 3.4s ease-in-out infinite;
+}
+
+@keyframes post-sticky-shine {
+  0%,
+  62% {
+    left: -60%;
+  }
+  86%,
+  100% {
+    left: 118%;
+  }
+}
+
+/* 暗色模式：卡片底色变深，角标再亮一点点避免发闷 */
+[data-theme='dark'] .recent-post-item .post-sticky-badge {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.34);
+}
+
+/* 尊重「减少动态效果」偏好的用户 */
+@media (prefers-reduced-motion: reduce) {
+  .recent-post-item .post-sticky-badge .post-sticky-shine {
+    animation: none;
+    display: none;
+  }
+}
+
+
+/* ===== 侧栏个人信息卡片改版：玻璃拟态 + 马克笔名字（2026-02-16） =====
+ * 只作用于侧栏第一张卡 #aside-content > .card-widget.card-info，
+ * 其他侧栏卡片（公告栏 / 最新文章 / 网站资讯 / 日历…）一律不受影响。
+ * 手法：卡内 ::before 铺一层磨砂玻璃（上半部渐隐，露出背景图原样）→ 杂志式排版；
+ *      统计行改竖线分组；Github 按钮改白底描边药丸（hover 填主题色）；
+ *      名字加黄色马克笔高亮（深色模式改墨字压黄条，保证对比度）。
+ * 回滚：整段删除即可；改动前备份见 bak/custom.css.bak-2026-10-03T04-13-13。
+ * 依赖：--theme-color 由站点内联脚本注入（默认 rgb(57,197,187)），--global-font = LXGW。
+ */
+#aside-content > .card-widget.card-info {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 0 0 1px rgba(13, 43, 51, .07), 0 22px 44px -22px rgba(8, 42, 52, .5);
+}
+#aside-content > .card-widget.card-info::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  /* 2026-10-04 性能修复：backdrop-filter 只在 ≥1200px 的桌面端启用（见紧接其后的 @media）。
+     窄屏 / 平板降级成实底半透明面板 —— 没有实时模糊，卡片本身仍是卡片，
+     但不再让弱 GPU 在滚动时逐帧重算背景。原始玻璃配方原样保留在 @media 里。 */
+  background: linear-gradient(180deg, rgba(255, 255, 255, .62) 0%, rgba(255, 255, 255, .82) 30%, rgba(255, 255, 255, .92) 64%, rgba(255, 255, 255, .96) 100%);
+  -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 22%);
+  mask-image: linear-gradient(180deg, transparent 0, #000 22%);
+}
+/* ≥1200px：玻璃拟态（原始配方：磨砂 + 上半部渐隐，露出背景图原样） */
+@media (min-width: 1200px) {
+  #aside-content > .card-widget.card-info::before {
+    backdrop-filter: blur(11px) saturate(1.45);
+    -webkit-backdrop-filter: blur(11px) saturate(1.45);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .42) 30%, rgba(255, 255, 255, .76) 64%, rgba(255, 255, 255, .88) 100%);
+  }
+}
+#aside-content > .card-widget.card-info > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* 名字：黄色马克笔高亮 + 微倾 */
+#aside-content > .card-widget.card-info .author-info__name {
+  /* display:table + margin:auto = 块级收缩盒：无论侧栏多宽都另起一行、水平居中在头像正下方
+     （inline-block 在宽侧栏下会被挤到头像右侧同一行，看着就像贴在头像右下角） */
+  display: table;
+  max-width: 100%;
+  margin: .14em auto 0;
+  padding: .06em .18em .1em;
+  font-size: 1.68em;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: .015em;
+  color: #0d2b33;
+  transform: rotate(-.7deg);
+}
+/* 马克笔条：改用伪元素按 em 定位（深/浅色同一套几何），避免行高把黄色条挤到字下面 */
+#aside-content > .card-widget.card-info .author-info__name::before {
+  content: "";
+  position: absolute;
+  left: .1em;
+  right: .1em;
+  bottom: .44em;
+  height: .64em;
+  z-index: -1;
+  border-radius: .09em;
+  background: rgba(255, 214, 102, .92);
+}
+/* 描述：小号大写 + 宽字距 */
+#aside-content > .card-widget.card-info .author-info__description {
+  margin-top: .14em;
+  font-size: .7em;
+  font-weight: 700;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: rgba(13, 43, 51, .72);
+}
+/* 统计：杂志式上下细线 + 竖分隔线 */
+#aside-content > .card-widget.card-info .card-info-data {
+  display: flex;
+  align-items: stretch;
+  margin: 15px 0 0;
+  padding: 10px 0;
+  border-top: 1px solid rgba(13, 43, 51, .14);
+  border-bottom: 1px solid rgba(13, 43, 51, .14);
+}
+#aside-content > .card-widget.card-info .card-info-data > a {
+  flex: 1 1 0;
+  position: relative;
+  padding: 0;
+}
+#aside-content > .card-widget.card-info .card-info-data > a + a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8%;
+  bottom: 8%;
+  width: 1px;
+  background: rgba(13, 43, 51, .14);
+}
+#aside-content > .card-widget.card-info .card-info-data .headline {
+  font-size: .7em;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: .22em;
+  color: rgba(13, 43, 51, .62);
+}
+#aside-content > .card-widget.card-info .card-info-data .length-num {
+  font-size: 1.55em;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #0d2b33;
+  margin-top: -.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Github 按钮：白底描边药丸，hover 填充主题色 */
+#aside-content > .card-widget.card-info > #card-info-btn {
+  margin-top: 13px;
+  background-color: rgba(255, 255, 255, .82) !important;
+  color: #0d2b33 !important;
+  border: 1px solid rgba(13, 43, 51, .16);
+  border-radius: 999px;
+  line-height: 2.45;
+  font-weight: 600;
+  letter-spacing: .06em;
+  box-shadow: 0 8px 20px -12px rgba(8, 42, 52, .6);
+  transition: all .3s ease;
+}
+#aside-content > .card-widget.card-info > #card-info-btn:hover {
+  background-color: var(--theme-color) !important;
+  color: #fff !important;
+  border-color: transparent;
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px -12px rgba(8, 42, 52, .7);
+}
+#aside-content > .card-widget.card-info .card-info-social-icons {
+  margin-top: 11px;
+}
+#aside-content > .card-widget.card-info .card-info-avatar .avatar-img {
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, .62), 0 12px 26px -14px rgba(8, 42, 52, .8);
+}
+
+/* ---- 深色模式适配：只换配色，规则本体一套 ---- */
+[data-theme="dark"] #aside-content > .card-widget.card-info {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, .08), 0 22px 44px -20px rgba(0, 0, 0, .75);
+}
+[data-theme="dark"] #aside-content > .card-widget.card-info::before {
+  /* 窄屏降级版：实底（≥1200px 的玻璃版在紧随其后的 @media 里覆盖回来） */
+  background: linear-gradient(180deg, rgba(6, 22, 30, .66) 0%, rgba(6, 22, 30, .84) 30%, rgba(6, 22, 30, .92) 64%, rgba(6, 22, 30, .95) 100%);
+}
+@media (min-width: 1200px) {
+  [data-theme="dark"] #aside-content > .card-widget.card-info::before {
+    background: linear-gradient(180deg, rgba(6, 22, 30, 0) 0%, rgba(6, 22, 30, .42) 30%, rgba(6, 22, 30, .74) 64%, rgba(6, 22, 30, .86) 100%);
+  }
+}
+[data-theme="dark"] #aside-content > .card-widget.card-info .author-info__name {
+  color: #e9fffc;                     /* 浅字压在玻璃条上：真实页实测对比度 12.3:1 */
+  text-shadow: 0 1px 6px rgba(0, 0, 0, .5);
+}
+/* 夜间马克笔 = 午夜玻璃条：深色半透条 + 极光青细描边，压在文字后面（浅色仍用黄条，几何按 em 共享） */
+[data-theme="dark"] #aside-content > .card-widget.card-info .author-info__name::before {
+  display: block;
+  bottom: .40em;
+  height: .74em;
+  background: rgba(9, 29, 37, .72);
+  border: 1px solid rgba(127, 227, 218, .45);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, .45), inset 0 0 18px rgba(57, 197, 187, .18);
+}
+[data-theme="dark"] #aside-content > .card-widget.card-info .author-info__description {
+  color: rgba(242, 251, 251, .82);
+}
+[data-theme="dark"] #aside-content > .card-widget.card-info .card-info-data {
+  border-color: rgba(255, 255, 255, .2);
+}
+[data-theme="dark"] #aside-content > .card-widget.card-info .card-info-data > a + a::before {
+  background: rgba(255, 255, 255, .2);
+}
+[data-theme="dark"] #aside-content > .card-widget.card-info .card-info-data .headline {
+  color: rgba(242, 251, 251, .7);
+}
+[data-theme="dark"] #aside-content > .card-widget.card-info .card-info-data .length-num {
+  color: #fff;
+}
+[data-theme="dark"] #aside-content > .card-widget.card-info > #card-info-btn {
+  background-color: rgba(255, 255, 255, .14) !important;
+  color: #eaf7f7 !important;
+  border-color: rgba(255, 255, 255, .3);
+  box-shadow: none;
+}
+[data-theme="dark"] #aside-content > .card-widget.card-info > #card-info-btn:hover {
+  background-color: var(--theme-color) !important;
+  color: #fff !important;
+  border-color: transparent;
+}
+
+/* ============================================================================
+ * 【美化面板：手机端排布 + 新增的包裹层】（2026-10-04）
+ * ----------------------------------------------------------------------------
+ * 面板 HTML 见 source/js/modules/settings.js 的 createWinbox()。本次配套改动：
+ *   · 每段「文字 + 开关」在 HTML 里包成 <label class="opt">；
+ *   · 背景滤镜三个参数各自包成 <label class="bgp">；
+ *   · 主题色那一行加了 .colorRow；
+ *   · 「恢复默认背景」按钮已删（reset() 里已经会 resetBg_()，那个按钮是重复的）。
+ * 所以下面除「手机端重排」外，还有几条给新包裹层兜底的基础规则。
+ *
+ * 【为什么不就地写在 2218 那个「设置面板的开关按钮」一节里】
+ *   这一段必须排在 .swf(原 1902) / 颜色单选(原 1918) / 开关按钮(原 2218) 之后，
+ *   同权重时才压得住它们；而文件头那份目录索引里的行号是按插入位置算的，
+ *   插在中间会把后面所有条目的行号整体推走 —— 放到文件末尾，索引继续有效。
+ *   桌面端一律维持原样：真正的重排全部落在下面那条 max-width:768px 里。
+ * ------------------------------------------------------------------------- */
+
+/* 开关行里的一段「文字 + 开关」。原先两者是 .content 的直接子元素，
+   窄屏换行时会被拆散（文字留在一行、开关掉到下一行），包一层就不会分家了 */
+.settings .content > .opt {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  cursor: pointer;
+}
+.settings .content > .opt > .content-text {
+  padding-left: 10px;
+}
+/* 并排的第二列留出更大间距（原先是写在 HTML 上的 padding-left:20px） */
+.settings .content > .opt + .opt > .content-text {
+  padding-left: 20px;
+}
+
+/* 背景滤镜参数：模糊半径 / 饱和度 / 对比度各自成组，数字框与它的单位不再被拆行 */
+.settings .bgparams {
+  align-items: center;
+  gap: 6px 10px;
+}
+.settings .bgp {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  flex: 0 0 auto;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.settings .bgp-v {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+/* 保存按钮：原来这几个属性写在 HTML 的 inline style 上 */
+.settings .bgp-save {
+  background: var(--theme-color);
+  width: 48px;
+  border-radius: 6px;
+  color: white;
+  line-height: 1.2;
+  height: 28px;
+  margin-top: 2px;
+}
+
+/* 「切换背景」按钮：原来写成 🌈切换背景🌈 —— 两边各一个彩虹，窄屏时会把文字挤成两行
+   （另一个彩虹单独掉到第二行）。彩虹已删，下面这堆原本是 inline style。 */
+.settings .picbtn {
+  background: var(--theme-color);
+  width: 35%;
+  padding: 5px 0 7px 0;
+  border-radius: 30px;
+  color: white;
+  line-height: 2;
+}
+
+/* 主题色选择行：桌面一行铺开，手机端换成网格均分（见下面的 @media） */
+/* 两圈之间的空隙只是排版空白：不能被当成可选文本，否则点一下就会在那里落下
+   一个编辑光标（会闪的那道竖杠），而这一行本来没有任何可选的文字。 */
+.settings .colorRow {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 12px;
+  -webkit-user-select: none;
+  user-select: none;
+  caret-color: transparent;
+}
+
+/* 恢复默认设置按钮：原来是写死在 inline style 里的 #fc354c→#0abfbc 红青渐变，
+   现在跟随主题色。第一行是给不支持 color-mix() 的老浏览器回退的纯主题色。 */
+#reset_btn {
+  display: block;
+  width: 40%;
+  padding: 15px 0;
+  border-radius: 30px;
+  color: white;
+  font-size: 1.1em;
+  white-space: nowrap;
+  background: var(--theme-color);
+  background: linear-gradient(to right, color-mix(in srgb, var(--theme-color) 55%, #ffffff), var(--theme-color));
+}
+
+@media screen and (max-width: 768px) {
+  /* 开关行：一段独占一整行，文字在左、开关贴右，叠几行也是齐的 */
+  .settings .content > .opt {
+    flex: 1 1 100%;
+    justify-content: space-between;
+    min-height: 38px;
+  }
+  /* 两列都从 10px 起，免得读完一行又缩进 10px */
+  .settings .content > .opt > .content-text,
+  .settings .content > .opt + .opt > .content-text {
+    padding-left: 10px;
+  }
+  /* 开关的垂直居中由 .opt 的 flex 居中统一负责（见「开关按钮」那条的基础样式），
+     这里不再需要单独把 transform 覆盖回 none。 */
+
+  /* 「模糊半径: 0px | 饱和度: 108% | 对比度: 105%」这行摘要：360px 窄屏下 1em 会正好在
+     「对比度:」和红色数值之间断成两行，缩一档让它留住一行 */
+  #bgFilterShow {
+    font-size: .9em;
+  }
+
+  /* 背景滤镜参数：一行一项，标签在左、数字框+单位在右，保存按钮独占一行铺满 */
+  .settings .bgparams {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+  .settings .bgp {
+    justify-content: space-between;
+    gap: 8px;
+    min-height: 34px;
+  }
+  .settings .bgparams > .bgp-save {
+    width: 100%;
+    height: 34px;
+    margin-top: 4px;
+  }
+
+  /* 「切换背景」按钮：跟「保存」一样整行宽，不再缩成一小坨 */
+  .settings .picbtn {
+    width: 100%;
+    padding: 9px 0;
+    line-height: 1.2;
+    font-size: .95em;
+  }
+
+  /* 主题色：13 个色圈改成等宽网格，不再挤成参差不齐的「10 + 3」两行 */
+  .settings .colorRow {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(38px, 1fr));
+    gap: 8px 0;
+    justify-items: center;
+    padding-left: 0;
+  }
+  .settings .colorRow > input[name="colors"] {
+    margin-right: 0;
+    width: 24px;
+    height: 24px;
+  }
+
+  /* 字体按钮：等宽两列 + 字号内边距收一档。只动手机端 ——
+     桌面端的 winboxNeedSize() 靠量前 5 个 .swf 的宽度来定面板宽度，不能碰 */
+  .settings #swfs,
+  .settings #swfs_code {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 8px;
+  }
+  .settings #swfs > .swf,
+  .settings #swfs_code > .swf {
+    margin: 0;
+    padding: 8px 6px;
+    font-size: 17px;
+    text-align: center;
+  }
+
+  /* 恢复默认设置：整行宽，再窄的手机也不会折成两行 */
+  #reset_btn {
+    width: 100%;
+    padding: 13px 0;
+    font-size: 1em;
+  }
+}
+
+/* 面板打开时，把右下角悬浮工具条 #rightside 压到面板下面。
+   WinBox 面板的 z-index 是 99（settings.js 里 WinBox({ index: 99 })），
+   主题的 #rightside 是 z-index:100（themes/fomalhaut/source/css/_layout/rightside.styl:5），
+   而手机端面板宽 95%、面板最大化时更是整屏 —— 必然重叠，工具条会盖住右对齐的开关。 */
+body:has(#meihuaBox) #rightside {
+  z-index: 90;
+}
+
+
+
+
+
 
 .search-dialog {
   position: fixed;

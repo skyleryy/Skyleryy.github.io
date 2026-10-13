@@ -4,11 +4,173 @@
   
     
     <entry>
+      <title>Python 小技巧：让遍历少一点下标</title>
+      <link href="/posts/ecb85a75.html"/>
+      <url>/posts/ecb85a75.html</url>
+      
+        <content type="html"><![CDATA[<p><img src="/assets/skyler/samples/sample-6.webp" alt="文章配图"></p><p>写循环时，常见的开头是 <code>for i in range(len(items))</code>。如果只是想拿到元素，可以直接遍历列表；如果还需要序号，可以交给 <code>enumerate</code>。</p><h2 id="需要序号时">需要序号时</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">names = [<span class="string">&quot;薄荷&quot;</span>, <span class="string">&quot;草莓&quot;</span>]</span><br><span class="line"><span class="keyword">for</span> number, name <span class="keyword">in</span> <span class="built_in">enumerate</span>(names, start=<span class="number">1</span>):</span><br><span class="line">    <span class="built_in">print</span>(number, name)</span><br></pre></td></tr></table></figure><p>输出就是 <code>1 薄荷</code>、<code>2 草莓</code>。序号只是辅助信息，循环里直接使用 <code>name</code>，通常比反复写 <code>names[i]</code> 更容易读。</p><h2 id="两个列表一起走">两个列表一起走</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">scores = [<span class="number">95</span>, <span class="number">88</span>]</span><br><span class="line"><span class="keyword">for</span> name, score <span class="keyword">in</span> <span class="built_in">zip</span>(names, scores):</span><br><span class="line">    <span class="built_in">print</span>(name, score)</span><br></pre></td></tr></table></figure><p>需要注意：默认的 <code>zip</code> 会在最短的输入结束时停止。如果两个列表理应一样长，就要检查长度，或者在 Python 3.10 及以上版本使用 <code>zip(names, scores, strict=True)</code>，让长度不一致直接报错。</p><p>简洁的代码也要保留正确的边界。省掉下标之后，不妨多看一眼：这些数据真的一一对应吗？</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+            <tag> 小技巧 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>DPO 小记：从两个回答里学偏好</title>
+      <link href="/posts/4e9c747f.html"/>
+      <url>/posts/4e9c747f.html</url>
+      
+        <content type="html"><![CDATA[<p><img src="/assets/skyler/samples/sample-5.webp" alt="文章配图"></p><p>SFT 给模型看示范答案；偏好数据则给模型看同一个问题下的两个回答，并标记更喜欢哪一个。DPO 是利用这种成对偏好数据训练语言模型的方法之一。</p><h2 id="一对样本">一对样本</h2><p>问题：“一句话解释动态规划。”</p><ul><li>chosen：把问题拆成子问题，保存子问题答案，再按照状态转移组合出最终答案。</li><li>rejected：动态规划就是动态地规划一下。</li></ul><p>这对样本传达的是解释质量的差异，不能简单把“更长”当成“更好”。</p><h2 id="标准离线-DPO-做了什么">标准离线 DPO 做了什么</h2><p>它同时比较当前模型和固定参考模型对这两个回答的概率，优化一个偏好分类损失，让训练模型更倾向于 chosen。参考模型参与的是训练目标中的相对比较，不是逐条判定答案是否正确的裁判。</p><p>与先拟合独立奖励模型、再进行 PPO 优化的常见流程相比，标准离线 DPO 不需要单独训练奖励模型，也不需要在微调过程中不断采样新回答。</p><p>偏好标签的质量依然很重要。标注如果偏爱套话，模型也可能学会套话；偏好优化本身不等于事实校验。</p><p>参考：<a href="https://arxiv.org/abs/2305.18290">Direct Preference Optimization: Your Language Model is Secretly a Reward Model</a>。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 大模型 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 后训练 </tag>
+            
+            <tag> DPO </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>SFT 小记：先给模型看一份好答案</title>
+      <link href="/posts/c6bfa97c.html"/>
+      <url>/posts/c6bfa97c.html</url>
+      
+        <content type="html"><![CDATA[<p><img src="/assets/skyler/samples/sample-4.webp" alt="文章配图"></p><p>预训练让模型接触大量文本。要让它更稳定地按指令回答，可以再用“输入与示范答案”的数据做监督微调，也就是 SFT。</p><h2 id="一条样本长什么样">一条样本长什么样</h2><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;prompt&quot;</span><span class="punctuation">:</span> <span class="string">&quot;用一句话解释什么是滑动窗口。&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;response&quot;</span><span class="punctuation">:</span> <span class="string">&quot;滑动窗口用不断移动的区间维护局部条件，减少对同一段数据的重复扫描。&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure><p>一种常见训练方式是：给模型提供问题和已经写出的答案前缀，让它学习预测答案中的下一个 token，并只对回答部分计算训练损失。这通常称为 teacher forcing。</p><h2 id="示范会教会什么">示范会教会什么</h2><p>示范中的结构、语气、长度和事实质量，都会影响模型学到的回答方式。因此整理数据时，除了检查格式，还要检查示范是否准确、是否真的回答了问题。</p><p>InstructGPT 工作使用人工示范进行监督微调，随后再利用回答排序做偏好训练。这个过程也提醒我们：模仿好答案与学习“哪个答案更好”，是可以分开处理的两件事。模型经过这些步骤仍然可能犯错。</p><p>参考：<a href="https://arxiv.org/abs/2203.02155">Training language models to follow instructions with human feedback</a>。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 大模型 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 后训练 </tag>
+            
+            <tag> SFT </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>三则不太保温的冷笑话</title>
+      <link href="/posts/25e23eda.html"/>
+      <url>/posts/25e23eda.html</url>
+      
+        <content type="html"><![CDATA[<p><img src="/assets/skyler/samples/sample-3.webp" alt="文章配图"></p><h2 id="一、程序员买咖啡">一、程序员买咖啡</h2><p>店员问：“需要多少糖？”</p><p>程序员认真想了想：“先给我一个默认值，其他的写在配置文件里。”</p><p>店员：“那还需要奶吗？”</p><p>程序员：“这个功能能不能下个版本再做？”</p><h2 id="二、动态规划的烦恼">二、动态规划的烦恼</h2><p>朋友问：“你为什么什么事都记得？”</p><p>动态规划说：“因为我开了缓存。”</p><p>朋友又问：“那为什么还会难过？”</p><p>动态规划说：“状态转移写错了。”</p><h2 id="三、模型的新年目标">三、模型的新年目标</h2><p>模型写下新年目标：“今年我要学会说不。”</p><p>第二天，它把自己的计划退回来了：</p><p>“抱歉，这个计划暂时不在我的能力范围内。”</p><p>冷笑话不负责保温，也不保证好笑。如果读到这里嘴角稍微动了一下，那这一页就完成任务了。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 冷笑话 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 日常 </tag>
+            
+            <tag> 程序员 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>滑动窗口：左边界为什么不能倒退</title>
+      <link href="/posts/0543b8cb.html"/>
+      <url>/posts/0543b8cb.html</url>
+      
+        <content type="html"><![CDATA[<p><img src="/assets/skyler/samples/sample-2.webp" alt="文章配图"></p><p><a href="https://leetcode.cn/problems/longest-substring-without-repeating-characters/description/">LeetCode 3 · 无重复字符的最长子串</a> 要求找出连续、没有重复字符的最长片段。“连续”很关键，不能跳着选字符。</p><h2 id="让窗口始终合法">让窗口始终合法</h2><p>用 <code>left</code> 和 <code>right</code> 表示窗口两端，再用字典保存每个字符上一次出现的位置。右边界每次前进一格，遇到窗口内已经出现的字符，就把左边界移到它上次出现位置的后一格。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">longest_unique</span>(<span class="params">s: <span class="built_in">str</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">    last = &#123;&#125;</span><br><span class="line">    left = best = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> right, char <span class="keyword">in</span> <span class="built_in">enumerate</span>(s):</span><br><span class="line">        <span class="keyword">if</span> char <span class="keyword">in</span> last:</span><br><span class="line">            left = <span class="built_in">max</span>(left, last[char] + <span class="number">1</span>)</span><br><span class="line">        last[char] = right</span><br><span class="line">        best = <span class="built_in">max</span>(best, right - left + <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> best</span><br></pre></td></tr></table></figure><h2 id="为什么需要-max？">为什么需要 max？</h2><p>看看 <code>abba</code>。读到第二个 b 时，左边界已经移到了位置 2。随后遇到最后一个 a，它上次出现的位置是 0；这个 a 早已在窗口之外，不能把左边界拉回位置 1。</p><p>所以左边界只前进，不倒退。每个字符处理一次，时间复杂度为 O(n)，字典空间为 O(min(n, 字符集大小))。能说清楚窗口保持的条件，就更容易把代码写对。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+            <tag> 滑动窗口 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>动态规划：从爬楼梯开始</title>
+      <link href="/posts/3523c4c2.html"/>
+      <url>/posts/3523c4c2.html</url>
+      
+        <content type="html"><![CDATA[<p><img src="/assets/skyler/samples/sample-1.webp" alt="文章配图"></p><p><a href="https://leetcode.cn/problems/climbing-stairs/description/">LeetCode 70 · 爬楼梯</a> 是理解动态规划的一个小起点：一次走一阶或两阶，到第 n 阶有多少种走法？</p><h2 id="先问最后一步">先问最后一步</h2><p>到第 n 阶，最后一步只可能从 n−1 阶走一阶，或者从 n−2 阶走两阶。因此 <code>dp[n] = dp[n-1] + dp[n-2]</code>。这里 <code>dp[i]</code> 表示到第 i 阶的走法数。</p><p>设 <code>dp[0] = 1</code>，表示不走也是一种完成方式；<code>dp[1] = 1</code>。这样就能从小到大推下去。例如到第 3 阶有三种走法：<code>1+1+1</code>、<code>1+2</code>、<code>2+1</code>。</p><h2 id="只保存最近两个答案">只保存最近两个答案</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">climb_stairs</span>(<span class="params">n: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">    prev, curr = <span class="number">1</span>, <span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>, n + <span class="number">1</span>):</span><br><span class="line">        prev, curr = curr, prev + curr</span><br><span class="line">    <span class="keyword">return</span> curr</span><br></pre></td></tr></table></figure><p>题目的 n 至少为 1。代码每次只依赖前两个状态，时间复杂度是 O(n)，额外空间是 O(1)。</p><p>先定义状态，再写转移，最后检查边界。动态规划没有那么玄，它常常只是把“重复想过的事情”认真记下来。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+            <tag> 动态规划 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>第二篇文章</title>
       <link href="/posts/1e7ff688.html"/>
       <url>/posts/1e7ff688.html</url>
       
-        <content type="html"><![CDATA[<p><img src="https://picbed.skylerplus.top/post/3.png" alt="3"></p><p>水水文章啦</p>]]></content>
+        <content type="html"><![CDATA[<p><img src="/assets/skyler/post-3.jpg" alt="3"></p><p>水水文章啦</p>]]></content>
       
       
       <categories>
@@ -23,30 +185,11 @@
     
     
     <entry>
-      <title>第一篇文章</title>
-      <link href="/posts/5c2fafc7.html"/>
-      <url>/posts/5c2fafc7.html</url>
-      
-        <content type="html"><![CDATA[<p><img src="https://picbed.skylerplus.top/post/6.png" alt="6"></p><p>嘻嘻！</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 杂谈教程 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>纪念第一次旅游</title>
       <link href="/posts/1b709036.html"/>
       <url>/posts/1b709036.html</url>
       
-        <content type="html"><![CDATA[<p><img src="https://picbed.skylerplus.top/post/10.jpg'" alt="10"></p><p>放张美图</p>]]></content>
+        <content type="html"><![CDATA[<p><img src="/assets/skyler/post-10.jpg" alt="旅行照片"></p><p>放张美图</p>]]></content>
       
       
       <categories>
@@ -61,19 +204,19 @@
     
     
     <entry>
-      <title>小秘密不告诉你</title>
-      <link href="/posts/4a17b156.html"/>
-      <url>/posts/4a17b156.html</url>
+      <title>第一篇文章</title>
+      <link href="/posts/5c2fafc7.html"/>
+      <url>/posts/5c2fafc7.html</url>
       
-        <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="dec3c80b39633e85cba859549340fcbce13bed5e68d1a743563f97d67a95a242">fa52bbab1598bd790298039c33976c37eb0750119d520e81ae9fca94bf2f2a85806a49b9e358b0e8e84f5cd920a1734858fc1e0885cca93cc61e11709962b1e54909fa687b065cb7e297f21f450af58d434c60119431dc70c196ce65025445857a2445774bb1fdb7e72360af963e0248c7eafdb7cb71a9bd4d485103d15db911ba923dae2bc348ab651728f37e03cc27dee00db72b28ec1ce5b653d7e5c9b9e7eb42ee012a11853a47d96962c60f1c7f</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-xray">      <input class="hbe hbe-input-field hbe-input-field-xray" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-xray" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-xray">您好, 这里需要密码.</span>      </label>      <svg class="hbe hbe-graphic hbe-graphic-xray" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"></path>        <path d="M0,2.5c0,0,298.666,0,399.333,0C448.336,2.5,513.994,13,597,13c77.327,0,135-10.5,200.999-10.5c95.996,0,402.001,0,402.001,0"></path>      </svg>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+        <content type="html"><![CDATA[<p><img src="/assets/skyler/post-6.jpg" alt="6"></p><p>嘻嘻！</p>]]></content>
       
       
+      <categories>
+          
+          <category> 杂谈教程 </category>
+          
+      </categories>
       
-        <tags>
-            
-            <tag> mimi </tag>
-            
-        </tags>
       
     </entry>
     
